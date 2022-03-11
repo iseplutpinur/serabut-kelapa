@@ -1,0 +1,57 @@
+Home
+    logo [b]
+    Judul Utama [b]
+    Sub Judul [b]
+    Foto Utama [b]
+    Tombol title [b]
+
+About Us
+    judul [b]
+    detail [b]
+    Foto [b]
+
+Gallery
+    judul [b]
+    sub judul [b]
+    table galeri [b]
+
+Feature
+    judul [b]
+    sub judul [b]
+    table features [b]
+
+Produk
+    judul [b]
+    sub judul [b]
+    table produk [b]
+
+Testimoni
+    judul [b]
+    sub judul [b]
+    table testimoni [b]
+
+Team 
+    judul [b]
+    sub judul [b]
+    table team [b]
+
+Contact 
+    Pesan Masuk []
+    koordinat Google maps []
+
+Footer 
+    table sosial media []
+    alamat []
+    copyright []
+
+Pengaturan
+    Nomor whatsapp []
+    Judul Situs []
+    Deskripsi Situs // <meta name="description" content="Your description goes here"> []
+
+
+catatan:
+Home link tombol whatsapp
+tambah key value link untuk ahref tombol
+
+key value favicon

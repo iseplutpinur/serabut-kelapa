@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2022 at 02:31 PM
+-- Generation Time: Mar 12, 2022 at 02:32 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -11,39 +11,15 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
 -- Database: `tokobunga`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feature`
---
-
-CREATE TABLE `feature` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(255) DEFAULT NULL,
-  `keterangan` text DEFAULT NULL,
-  `foto` varchar(255) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_by` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `feature`
---
-
-INSERT INTO `feature` (`id`, `nama`, `keterangan`, `foto`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Integrity', 'Integrity means telling the truth, keeping our word and treating others with fairness and respect. Integrity is one of our most cherished assets. It must not be compromised.', '0b80d05720468bd60435df4b8fc65f5d.png', 1, 1, 1, NULL, '2022-03-11 17:15:47', '2022-03-11 17:17:38', NULL),
-(2, 'Quality', 'Quality is exhibited in many ways by selling and supporting products and services that delight customers, establishing a work environment , delivering financial results that meet investor expectations.', '8c2f49d7615208ce67d184dc0033360d.png', 1, 1, NULL, NULL, '2022-03-11 17:56:55', NULL, NULL),
-(3, 'Commitment', 'Commitment is important where we will continue to provide the best to our customers and investors all the time. Our opportunity to serve should be viewed as a privilege that is not to be taken for granted.', '00039859b4d8a1c2f78ca1a1994ce3ce.png', 1, 1, NULL, NULL, '2022-03-11 18:50:02', NULL, NULL),
-(4, 'Innovation', 'Innovation means inventing, designing, developing products and services that have high appeal in the marketplace and strengthen customer preference for the Universal Coco Indonesia project.', '3c7436c0af19e03d77831fe0f957ee85.png', 1, 1, NULL, NULL, '2022-03-11 18:50:23', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -496,15 +472,6 @@ INSERT INTO `whatsapp` (`id`, `name`, `description`, `number`, `status`, `create
 --
 
 --
--- Indexes for table `feature`
---
-ALTER TABLE `feature`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `created_by` (`created_by`),
-  ADD KEY `updated_by` (`updated_by`),
-  ADD KEY `deleted_by` (`deleted_by`);
-
---
 -- Indexes for table `footer_sosmed`
 --
 ALTER TABLE `footer_sosmed`
@@ -612,12 +579,6 @@ ALTER TABLE `whatsapp`
 --
 
 --
--- AUTO_INCREMENT for table `feature`
---
-ALTER TABLE `feature`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `footer_sosmed`
 --
 ALTER TABLE `footer_sosmed`
@@ -694,14 +655,6 @@ ALTER TABLE `whatsapp`
 --
 
 --
--- Constraints for table `feature`
---
-ALTER TABLE `feature`
-  ADD CONSTRAINT `feature_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `feature_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `feature_ibfk_3` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
 -- Constraints for table `footer_sosmed`
 --
 ALTER TABLE `footer_sosmed`
@@ -765,3 +718,7 @@ ALTER TABLE `whatsapp`
   ADD CONSTRAINT `whatsapp_ibfk_3` FOREIGN KEY (`updated_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `whatsapp_ibfk_4` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

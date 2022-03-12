@@ -77,8 +77,8 @@ class Render_Controller extends CI_Controller
 	protected $key_team_judul = 'team_judul';
 
 	// == kontak
+	protected $key_kontak_judul = 'kontak_judul';
 	protected $key_kontak_show = 'kontak_show';
-	protected $key_kontak_tampilan_depan = 'kontak_tampilan_depan';
 	protected $key_kontak_koordinat = 'kontak_koordinat';
 
 	// == footer

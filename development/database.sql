@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2022 at 02:41 AM
+-- Generation Time: Mar 12, 2022 at 10:13 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -64,6 +64,13 @@ CREATE TABLE `footer_sosmed` (
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `footer_sosmed`
+--
+
+INSERT INTO `footer_sosmed` (`id`, `nama`, `icon`, `link`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Facebook', 'fab fa-facebook', 'https://facebook.com/iseplutpinur7', 1, 1, NULL, NULL, '2022-03-12 16:09:04', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -133,12 +140,12 @@ INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, 
 ('feature_judul', 'Our Key Features', 'on', 1, 1, NULL, '2022-03-11 13:32:42', '2022-03-11 17:18:05', NULL),
 ('feature_show', 'on', NULL, 1, 1, NULL, '2022-03-11 13:32:42', '2022-03-11 17:18:05', NULL),
 ('feature_sub_judul', '-', 'on', 1, 1, NULL, '2022-03-11 13:32:42', '2022-03-11 17:18:05', NULL),
-('footer_alamat', NULL, NULL, 1, NULL, NULL, '2022-03-11 13:52:01', NULL, NULL),
+('footer_alamat', '41 madison ave, floor 24 new work, NY 10010 1-877-932-7111, support@mail.com', 'on', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 16:05:19', NULL),
 ('footer_contact', 'Info Kontak', '<p>                </p><address><span style=\"color: rgb(72, 72, 72); font-family: Poppins, sans-serif; font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);\">Toko bunga papan ucapan Bandung - Pasar Bunga tegalega, Bandung</span><br>Phone: <span style=\"color: rgb(72, 72, 72); font-family: Poppins, sans-serif; font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);\">081903902070</span><br>Email: athenafloristbandung@gmail.com</address>https://tokobungapapanucapanbandung.com<address><br></address><p></p>', 1, 1, NULL, '2021-11-19 17:52:48', '2022-03-10 23:10:04', NULL),
-('footer_copyright', 'Copyright © ${(new Date().getFullYear())} Toko Bunga Ucapan Bandung', NULL, 1, 1, NULL, '2021-11-19 17:52:48', '2021-11-19 18:46:33', NULL),
+('footer_copyright', 'Copyright © ${(new Date().getFullYear())} Serabut Kelapa', 'on', 1, 1, NULL, '2021-11-19 17:52:48', '2022-03-12 16:05:19', NULL),
 ('footer_descritpion', 'Kami menyediakan berbagai macam rangkaian bunga dengan design yang modern yang tentunya bisa anda lakukan costum baik ukuran atau jenis bunga', NULL, 1, 1, NULL, '2021-11-19 15:22:55', '2021-11-19 18:17:33', NULL),
 ('footer_list_head', 'Menyediakan', NULL, 1, 1, NULL, '2021-11-19 17:52:48', '2021-11-19 18:52:33', NULL),
-('footer_show', NULL, NULL, 1, NULL, NULL, '2022-03-11 13:52:01', NULL, NULL),
+('footer_show', 'on', NULL, 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 16:05:19', NULL),
 ('galeri_judul', 'GALLERY', 'on', 1, 1, NULL, '2022-03-11 13:27:05', '2022-03-11 13:34:10', NULL),
 ('galeri_show', 'on', NULL, 1, 1, NULL, '2022-03-11 13:28:10', '2022-03-11 16:16:05', NULL),
 ('galeri_sub_judul', 'Scelerisque duis semper vitae eget lorem vestibulum pulvinar habitant sed.', 'on', 1, 1, NULL, '2022-03-11 13:27:05', '2022-03-11 13:34:10', NULL),
@@ -150,8 +157,9 @@ INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, 
 ('home_show', '1', NULL, 1, 1, NULL, '2022-03-11 01:42:01', '2022-03-11 13:55:17', NULL),
 ('home_situs', NULL, NULL, 1, NULL, NULL, '2022-03-11 13:52:01', NULL, NULL),
 ('home_sub_judul', 'Siap pakai untuk media tanam pada tanaman anda dengan kualitas terbaik', '1', 1, 1, NULL, '2022-03-11 00:53:11', '2022-03-11 01:35:38', NULL),
-('kontak_koordinat', NULL, NULL, 1, NULL, NULL, '2022-03-11 13:52:01', NULL, NULL),
-('kontak_show', NULL, NULL, 1, NULL, NULL, '2022-03-11 13:52:01', NULL, NULL),
+('kontak_judul', 'About Us', 'on', 1, 1, NULL, '2022-03-12 11:39:30', '2022-03-12 11:51:55', NULL),
+('kontak_koordinat', '-6.896598', '107.630872', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 11:51:55', NULL),
+('kontak_show', '0', NULL, 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 11:58:08', NULL),
 ('kontak_tampilan_depan', NULL, NULL, 1, NULL, NULL, '2022-03-11 13:52:01', NULL, NULL),
 ('logo', 'd481abc4593064169dbcee9de39c804a.png', '4707ee8ba9fff6de51d74efbe5a35ee7.png', 1, 1, NULL, '2021-11-19 15:15:03', '2022-01-22 13:06:40', NULL),
 ('offer', 'Terlengkap Dan Terjangkau', 'Toko Bunga Ucapan Bandung', 1, 1, NULL, '2021-11-17 21:17:10', '2021-11-17 21:55:55', NULL),
@@ -163,7 +171,7 @@ INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, 
 ('produk_judul', 'Our Product', 'on', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-11 17:19:31', NULL),
 ('produk_show', 'on', NULL, 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-11 17:19:31', NULL),
 ('produk_sub_judul', '-', 'on', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-11 17:19:31', NULL),
-('team_judul', 'Our Teams', 'on', 1, 1, NULL, '2022-03-11 13:34:49', '2022-03-11 20:02:54', NULL),
+('team_judul', 'Our Teams', 'on', 1, 1, NULL, '2022-03-11 13:34:49', '2022-03-12 11:42:01', NULL),
 ('team_show', 'on', NULL, 1, 1, NULL, '2022-03-11 13:35:24', '2022-03-11 13:36:10', NULL),
 ('testimoni', 'Kepuasan Pelanggan adalah yang utama', 'TESTIMONI', 1, 1, NULL, '2021-11-17 22:23:33', '2021-11-17 22:29:34', NULL),
 ('testimoni_judul', 'Testimoni', 'on', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-11 17:45:33', NULL),
@@ -261,15 +269,16 @@ CREATE TABLE `pesan_masuk` (
   `nama` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `pesan` text DEFAULT NULL,
-  `foto` varchar(255) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0,
   `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_by` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `deleted_at` datetime DEFAULT NULL
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesan_masuk`
+--
+
+INSERT INTO `pesan_masuk` (`id`, `nama`, `email`, `pesan`, `created_by`, `created_at`) VALUES
+(4, 'Isep Lutpi Nur', 'sales@gmail.com', 'Pesan', NULL, '2022-03-12 10:05:40');
 
 -- --------------------------------------------------------
 
@@ -548,9 +557,7 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `pesan_masuk`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `created_by` (`created_by`),
-  ADD KEY `updated_by` (`updated_by`),
-  ADD KEY `deleted_by` (`deleted_by`);
+  ADD KEY `created_by` (`created_by`);
 
 --
 -- Indexes for table `produk`
@@ -621,13 +628,13 @@ ALTER TABLE `feature`
 -- AUTO_INCREMENT for table `footer_sosmed`
 --
 ALTER TABLE `footer_sosmed`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `level`
@@ -645,7 +652,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `pesan_masuk`
 --
 ALTER TABLE `pesan_masuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `produk`
@@ -729,9 +736,7 @@ ALTER TABLE `key_value`
 -- Constraints for table `pesan_masuk`
 --
 ALTER TABLE `pesan_masuk`
-  ADD CONSTRAINT `pesan_masuk_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `pesan_masuk_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `pesan_masuk_ibfk_3` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `pesan_masuk_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `produk`

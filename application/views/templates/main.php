@@ -47,9 +47,9 @@ function getBg(int $counter): string
               <li class="nav-item"><a class="nav-link nav" href="#gallery">Gallery</a></li>
               <li class="nav-item"><a class="nav-link nav" href="#feature">Feature</a></li>
               <li class="nav-item"><a class="nav-link nav" href="#product">Product</a></li>
-              <!-- <li class="nav-item"><a class="nav-link nav" href="#testimoni">Testimoni</a></li> -->
+              <li class="nav-item"><a class="nav-link nav" href="#testimoni">Testimoni</a></li>
               <li class="nav-item"><a class="nav-link nav" href="#team">Team</a></li>
-              <!-- <li class="nav-item"><a class="nav-link nav" href="#contact">Contact Us</a></li> -->
+              <li class="nav-item"><a class="nav-link nav" href="#contact">Contact Us</a></li>
             </ul>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -781,7 +781,7 @@ function getBg(int $counter): string
       </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="contact">
       <div id="map" class="rounded-lg overflow-hidden" style="height: 500px;"></div>
       <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOdKtT5fapH3_OfhV3HFeZjqFs4OfNIew&amp;callback=mapinitialize" type="text/javascript"></script>
       <script type="text/javascript">
@@ -1062,34 +1062,37 @@ function getBg(int $counter): string
       </script>
     </div>
 
-    <div class="map-wrapper pb-2 pb-lg--5">
+    <div class="map-wrapper">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="contact-wrap bg-white shadow-lg rounded-lg position-relative">
               <h1 class="text-grey-900 fw-700 display3-size mb-5 lh-1">Contact us</h1>
-              <form action="#">
+              <div id="alert">
+
+              </div>
+              <form action="#" id="fpesan">
                 <div class="row">
                   <div class="col-lg-6 col-md-12">
                     <div class="form-group mb-3">
-                      <input type="text" class="form-control style2-input bg-color-none text-grey-700" value="Name">
+                      <input type="text" class="form-control style2-input bg-color-none " name="nama" placeholder="Nama">
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-12">
                     <div class="form-group mb-3">
-                      <input type="text" class="form-control style2-input bg-color-none text-grey-700" value="Email">
+                      <input type="email" class="form-control style2-input bg-color-none " name="email" placeholder="Email">
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="form-group mb-3 md-mb-2">
-                      <textarea class="w-100 h125 style2-textarea p-3 form-control">Message</textarea>
+                      <textarea class="w-100 h125 style2-textarea p-3 form-control" name="pesan" placeholder="Pesan"></textarea>
                     </div>
-                    <div class="form-check text-left mt-3 float-left md-mb-2">
-                      <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
-                      <label class="form-check-label font-xsss text-grey-500 fw-500" for="exampleCheck1">I agree to the term of this <a href="#" class="text-grey-600 fw-600">Privacy Policy</a></label>
-                    </div>
-                    <div class="form-group"><a href="#" class="rounded-lg style1-input float-right bg-current text-white text-center font-xss fw-500 border-2 border-0 p-0 w175">Submit</a>
+
+                    <div class="form-group">
+                      <button type="submit" class="rounded-lg style1-input bg-current text-white text-center font-xss fw-500 border-2 border-0 p-0 w175">
+                        Submit
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -1097,47 +1100,12 @@ function getBg(int $counter): string
               </form>
             </div>
           </div>
-          <div class="col-lg-12 pb-lg--7 pb-5 pt-0">
-            <div class="row">
-              <div class="col-lg-4 col-md-4 xs-mb-2">
-                <div class="card shadow-xss border-0 p-5 rounded-lg">
-                  <span class="btn-round-xxxl alert-success"><i class="feather-mail text-success font-xl"></i></span>
-                  <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Email us</h2>
-                  <p class="font-xsss text-grey-500 fw-500 mb-3">Ask us a question by email and we will
-                    respond within a few days.</p>
-                  <a href="#" class="fw-700 font-xsss text-primary">Get in touch</a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-4 xs-mb-2">
-                <div class="card shadow-xss border-0 p-5 rounded-lg">
-                  <span class="btn-round-xxxl alert-primary"><i class="feather-map-pin text-primary font-xl"></i></span>
-                  <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Contact us</h2>
-                  <p class="font-xsss text-grey-500 fw-500 mb-3">Ask us a question by email and we will
-                    respond within a few days.</p>
-                  <a href="#" class="fw-700 font-xsss text-primary">Get in touch</a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-4 xs-mb-2">
-                <div class="card shadow-xss border-0 p-5 rounded-lg">
-                  <span class="btn-round-xxxl alert-danger"><i class="feather-phone text-danger font-xl"></i></span>
-                  <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Call us</h2>
-                  <p class="font-xsss text-grey-500 fw-500 mb-3">Ask us a question by email and we will
-                    respond within a few days.</p>
-                  <a href="#" class="fw-700 font-xsss text-primary">Get in touch</a>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
         </div>
       </div>
     </div>
 
 
-    <div class="footer-wrapper bg-light">
+    <div class="footer-wrapper bg-light my-0">
       <div class="container">
         <div class="d-lg-flex flex-row justify-content-between  align-items-end">
           <div>
@@ -1203,6 +1171,80 @@ function getBg(int $counter): string
   <script src="<?= base_url() ?>assets/template/front/js/baguetteBox.min.js"></script>
   <script>
     baguetteBox.run('.tz-gallery');
+  </script>
+
+  <!-- contact -->
+  <script>
+    $(document).ready(() => {
+      function setLoading(loading) {
+        const btn = $('button[type=submit]');
+        const nama = $('[name=nama]');
+        const email = $('[name=email]');
+        const pesan = $('[name=pesan]');
+        if (loading) {
+          btn.attr('disabled', '');
+          btn.html(`<div class="spinner-border" style="width: 1.3rem;height: 1.3rem;margin-right: 8px;" role="status">
+                          <span class="sr-only">Loading...</span>
+                        </div> Submit`);
+          nama.attr('disabled', '');
+          email.attr('disabled', '');
+          pesan.attr('disabled', '');
+        } else {
+          btn.removeAttr('disabled');
+          btn.html('Submit');
+          nama.removeAttr('disabled');
+          email.removeAttr('disabled');
+          pesan.removeAttr('disabled');
+        }
+      }
+      $("#fpesan").submit(function(ev) {
+
+        ev.preventDefault();
+        const form = new FormData(this);
+
+        setLoading(true);
+        $.ajax({
+          method: 'post',
+          url: `<?= base_url() ?>home/input_pesan`,
+          data: form,
+          cache: false,
+          contentType: false,
+          processData: false,
+        }).done((data) => {
+          $('[name=nama]').val('');
+          $('[name=email]').val('');
+          $('[name=pesan]').val('');
+          $('#alert').html(`
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <div id="contact_alert_body">
+                    <strong>Berhasil</strong>. Pesan berhasil disimpan.
+                  </div>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+          `);
+        }).fail(($xhr) => {
+          if ($xhr.responseJSON) {
+            $('#alert').html(`
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <div id="contact_alert_body">
+                      <strong>Gagal</strong>. Pesan gagal disimpan.
+                      <ul>
+                        ${String($xhr.responseJSON.message)}
+                      </ul>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+            `);
+          }
+        }).always(() => {
+          setLoading(false);
+        })
+      });
+    });
   </script>
 </body>
 

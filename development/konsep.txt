@@ -37,7 +37,11 @@ Team
 
 Contact 
     Pesan Masuk []
-    koordinat Google maps []
+        Judul
+        Tabel Pesan Masuk
+        Pesan front 
+
+    Google maps Latitude longtitude
 
 Footer 
     table sosial media []

@@ -47,7 +47,7 @@ class Home extends Render_Controller
 
 		// == kontak
 		$this->data['kontak_show'] = $this->key_get($this->key_kontak_show);
-		$this->data['kontak_tampilan_depan'] = $this->key_get($this->key_kontak_tampilan_depan);
+		$this->data['kontak_judul'] = $this->key_get($this->key_kontak_judul);
 		$this->data['kontak_koordinat'] = $this->key_get($this->key_kontak_koordinat);
 
 		// == footer
@@ -65,12 +65,44 @@ class Home extends Render_Controller
 		$this->render();
 	}
 
+	public function input_pesan()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_error_delimiters('<li>', '</li>');
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required', ['required' => 'Nama harus di isi']);
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', [
+			'required' => 'Email harus di isi',
+			'valid_email' => 'Email tidak valid',
+		]);
+		$this->form_validation->set_rules('pesan', 'Pesan', 'trim|required', ['required' => 'Pesan harus di isi']);
+		if ($this->form_validation->run() == FALSE) {
+			$this->output_json([
+				'status' => false,
+				'data' => null,
+				'message' => validation_errors()
+			], 400);
+		} else {
+			$nama = $this->input->post('nama');
+			$email = $this->input->post('email');
+			$pesan = $this->input->post('pesan');
+			$result = $this->model->insertPesan($nama, $email, $pesan);
+
+			$code = $result == null ? 404 : 200;
+			$status = $result != null;
+			$this->output_json([
+				'status' => $status,
+				'length' => 1,
+				'data' =>  $result
+			], $code);
+		}
+	}
+
 	function __construct()
 	{
 		parent::__construct();
 		$this->default_template = 'templates/main';
 		$this->navigation_type = false;
-		$this->load->model('ProdukModel', 'model');
+		$this->load->model('HomeModel', 'model');
 		$this->load->library('plugin');
 		$this->load->helper('url');
 	}

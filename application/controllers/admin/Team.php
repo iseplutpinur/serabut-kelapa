@@ -8,6 +8,7 @@ class Team extends Render_Controller
         // data
         $this->data['judul'] = $this->key_get($this->key_team_judul);
         $this->data['show'] = $this->key_get($this->key_team_show);
+        $this->data['sub_judul'] = $this->key_get($this->key_team_sub_judul);
 
         // Page Settings
         $this->title = 'Team';
@@ -35,11 +36,15 @@ class Team extends Render_Controller
         $main = $this->input->post('main_judul');
         $show = $this->input->post('show_judul') == null ? 0 : 1;
         $judul = $this->key_set($this->key_team_judul, $main, $show);
+        // sub_judul
+        $main = $this->input->post('main_sub_judul');
+        $show = $this->input->post('show_sub_judul') == null ? 0 : 1;
+        $sub_judul = $this->key_set($this->key_team_sub_judul, $main, $show);
 
         // perlihatkan konten
         $show_content = $this->key_set($this->key_team_show, $this->input->post('show_content') == null ? 0 : 1, null);
 
-        $result = $show_content &&  $judul;
+        $result = $show_content &&  $judul && $sub_judul;
         $this->output_json($result);
     }
 

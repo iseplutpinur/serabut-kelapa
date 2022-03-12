@@ -33,4 +33,29 @@ class HomeModel extends CI_Model
         }
         return $result;
     }
+
+    public function getGalery()
+    {
+        return $this->db->get_where('galeri', ['status' => 1])->result_array();
+    }
+
+    public function getFeature()
+    {
+        return $this->db->get_where('feature', ['status' => 1])->result_array();
+    }
+
+    public function getProduk()
+    {
+        return $this->db->get_where('produk', ['status' => 1])->result_array();
+    }
+
+    public function getTestimoni()
+    {
+        return $this->db->get_where('testimoni', ['status' => 1])->result_array();
+    }
+
+    public function getTeam()
+    {
+        return $this->db->get_where('team', ['status' => 1])->result_array();
+    }
 }

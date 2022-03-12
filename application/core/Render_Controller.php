@@ -75,6 +75,7 @@ class Render_Controller extends CI_Controller
 	// == team
 	protected $key_team_show = 'team_show';
 	protected $key_team_judul = 'team_judul';
+	protected $key_team_sub_judul = 'team_sub_judul';
 
 	// == kontak
 	protected $key_kontak_judul = 'kontak_judul';

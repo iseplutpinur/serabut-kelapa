@@ -32,6 +32,7 @@ class Home extends Render_Controller
 		if ($this->data['galeri_show']['value1'] == 1) {
 			$this->data['galeri_judul'] = $this->key_get($this->key_galeri_judul);
 			$this->data['galeri_sub_judul'] = $this->key_get($this->key_galeri_sub_judul);
+			$this->data['galeri_items'] = $this->model->getGalery();
 		}
 
 		// == feature
@@ -39,12 +40,14 @@ class Home extends Render_Controller
 		if ($this->data['feature_show']['value1'] == 1) {
 			$this->data['feature_judul'] = $this->key_get($this->key_feature_judul);
 			$this->data['feature_sub_judul'] = $this->key_get($this->key_feature_sub_judul);
+			$this->data['feature_items'] = $this->model->getFeature();
 		}
 		// == produk
 		$this->data['produk_show'] = $this->key_get($this->key_produk_show);
 		if ($this->data['produk_show']['value1'] == 1) {
 			$this->data['produk_judul'] = $this->key_get($this->key_produk_judul);
 			$this->data['produk_sub_judul'] = $this->key_get($this->key_produk_sub_judul);
+			$this->data['produk_items'] = $this->model->getProduk();
 		}
 
 		// == testimoni
@@ -52,12 +55,15 @@ class Home extends Render_Controller
 		if ($this->data['testimoni_show']['value1'] == 1) {
 			$this->data['testimoni_judul'] = $this->key_get($this->key_testimoni_judul);
 			$this->data['testimoni_sub_judul'] = $this->key_get($this->key_testimoni_sub_judul);
+			$this->data['testimoni_items'] = $this->model->getTestimoni();
 		}
 
 		// == team
 		$this->data['team_show'] = $this->key_get($this->key_team_show);
 		if ($this->data['team_show']['value1'] == 1) {
 			$this->data['team_judul'] = $this->key_get($this->key_team_judul);
+			$this->data['team_sub_judul'] = $this->key_get($this->key_team_sub_judul);
+			$this->data['team_items'] = $this->model->getTeam();
 		}
 
 		// == kontak

@@ -27,7 +27,16 @@
               Tampilkan Judul
             </label>
           </div>
-
+          <div class="form-group">
+            <label for="main_sub_judul">Sub Judul</label>
+            <input type="text" class="form-control" id="main_sub_judul" name="main_sub_judul" placeholder="Sub Judul" required value="<?= $sub_judul['value1'] ?>" />
+          </div>
+          <div class="icheck-primary">
+            <input type="checkbox" id="show_sub_judul" name="show_sub_judul" <?= in_array($sub_judul['value2'], ['0', null]) ? '' : 'checked' ?>>
+            <label for="show_sub_judul">
+              Tampilkan Sub Judul
+            </label>
+          </div>
         </form>
       </div>
       <div class="card-footer">

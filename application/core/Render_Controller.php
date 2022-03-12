@@ -192,6 +192,19 @@ class Render_Controller extends CI_Controller
 
 		$data = array_merge($data, $this->data);
 		$data = $this->navigation_type == false ? $this->data : $data;
+
+
+		// pengaturan
+		$pengaturan = [
+			'title' => $this->key_get($this->key_pengaturan_title),
+			'icon' => $this->key_get($this->key_pengaturan_icon),
+			'deskripsi' => $this->key_get($this->key_pengaturan_deskripsi),
+			'copyright' => $this->key_get($this->key_footer_copyright),
+
+		];
+
+		$data = array_merge($data, ['pengaturan' => $pengaturan]);
+
 		$this->load->view($template, $data);
 	}
 

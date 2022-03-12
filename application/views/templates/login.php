@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login | Toko Bunga Ucapan Bandung</title>
+  <title>Login | <?= $pengaturan['title']['value2'] ?></title>
+  <meta name="description" content="<?= $pengaturan['deskripsi']['value1'] ?>">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -14,7 +15,7 @@
   <link rel="stylesheet" href="<?= base_url('assets/') ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
 
-  <link rel="icon" href="<?= base_url() ?>assets/favicon/favicon.ico">
+  <link rel="icon" href="<?= base_url('files/image/pengaturan/' . $pengaturan['icon']['value2']) ?>">
   <link rel="stylesheet" href="<?= base_url('assets/template/') ?>dist/css/adminlte.min.css">
   <link rel="apple-touch-icon" sizes="57x57" href="<?= base_url() ?>assets/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="<?= base_url() ?>assets/favicon/apple-icon-60x60.png">
@@ -41,7 +42,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <span class="h5"><b>Toko Bunga Ucapan Bandung</b><br>Login Sebagai Administrator</span>
+        <span class="h5"><b><?= $pengaturan['title']['value2'] ?></b><br>Login Sebagai Administrator</span>
       </div>
 
       <div class="card-body pt-3">
@@ -88,7 +89,7 @@
     </div>
     <!-- /.card -->
   </div>
-  <small class="form-text text-muted">&copy; 2021 Toko Bunga Ucapan Bandung</small>
+  <small class="form-text text-muted" id="coyright"></small>
   <!-- /.login-box -->
 
   <!-- jQuery -->
@@ -108,6 +109,10 @@
   <?php if (file_exists(VIEWPATH . "javascripts/contents/{$content}.js")) : ?>
     <script src="<?= $this->plugin->build_url("javascripts/contents/{$content}.js") ?>" type="text/javascript"></script>
   <?php endif; ?>
+
+  <script>
+    $('#coyright').html(`<?= $pengaturan['copyright']['value1'] ?>`);
+  </script>
 </body>
 
 </html>

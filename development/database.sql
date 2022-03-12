@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2022 at 10:53 AM
+-- Generation Time: Mar 12, 2022 at 11:17 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -142,7 +142,7 @@ INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, 
 ('feature_sub_judul', '-', 'on', 1, 1, NULL, '2022-03-11 13:32:42', '2022-03-11 17:18:05', NULL),
 ('footer_alamat', '41 madison ave, floor 24 new work, NY 10010 1-877-932-7111, support@mail.com', 'on', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 16:05:19', NULL),
 ('footer_contact', 'Info Kontak', '<p>                </p><address><span style=\"color: rgb(72, 72, 72); font-family: Poppins, sans-serif; font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);\">Toko bunga papan ucapan Bandung - Pasar Bunga tegalega, Bandung</span><br>Phone: <span style=\"color: rgb(72, 72, 72); font-family: Poppins, sans-serif; font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);\">081903902070</span><br>Email: athenafloristbandung@gmail.com</address>https://tokobungapapanucapanbandung.com<address><br></address><p></p>', 1, 1, NULL, '2021-11-19 17:52:48', '2022-03-10 23:10:04', NULL),
-('footer_copyright', 'Copyright © ${(new Date().getFullYear())} Serabut Kelapa', 'on', 1, 1, NULL, '2021-11-19 17:52:48', '2022-03-12 16:05:19', NULL),
+('footer_copyright', 'Copyright © ${(new Date().getFullYear())} Serabut Kelapa', 'on', 1, 1, NULL, '2021-11-19 17:52:48', '2022-03-12 17:08:34', NULL),
 ('footer_descritpion', 'Kami menyediakan berbagai macam rangkaian bunga dengan design yang modern yang tentunya bisa anda lakukan costum baik ukuran atau jenis bunga', NULL, 1, 1, NULL, '2021-11-19 15:22:55', '2021-11-19 18:17:33', NULL),
 ('footer_list_head', 'Menyediakan', NULL, 1, 1, NULL, '2021-11-19 17:52:48', '2021-11-19 18:52:33', NULL),
 ('footer_show', 'on', NULL, 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 16:05:19', NULL),
@@ -167,7 +167,7 @@ INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, 
 ('offer_decritpion', '<p><span class=\"fw-bold\">Toko Bunga Ucapan Bandung</span> merupakan salah satu toko bunga\r\n              terbaik di <span class=\"fw-bold\">Kota Bandung</span> dengan produk kami berbagai macam\r\n              karangan bunga dan rangkaian bunga seperti :\r\n            </p>\r\n            <br>\r\n            <div class=\"container\">\r\n              <ul style=\"list-style-type: disc;\">\r\n                <li>PAPAN BUNGA Single 2in1 Steroform</li>\r\n                <li>HANDBOUQUET</li>\r\n                <li>BOUQUET ( Meja, Standing, box )</li>\r\n                <li>SALIB, KRANS DUKA</li>\r\n                <li>Bunga Semat / kantong</li>\r\n                <li>Dekorasi Bahagia, Duka</li>\r\n                <li>Parcel Buah, Cookies</li>\r\n                <li>dll.</li>\r\n              </ul>\r\n            </div>\r\n\r\n            <br>\r\n            <p>Produk yang kami sediakan menggunakan bunga yang fresh dan bermacam warna yang bisa\r\n              disesuaikan untuk moment Anda. Selain itu kami juga menggunakan bunga buatan untuk pengganti\r\n              bunga asli agar karangan bunga Anda tidak cepat layu.</p>', NULL, 1, 1, NULL, '2021-11-17 21:17:10', '2022-01-10 17:44:17', NULL),
 ('offer_decritpion2', '            <p>Toko Bunga Papan Ucapan Bandung menawarka proses pemesanan yang sangat mudah, tinggal\r\n              cari\r\n              produk yang Anda inginkan, atau rekomendasi produk sesuai dengan moment yang Anda\r\n              butuhkan\r\n              melalui katalog produk di website ini, maupun langsung hubungi team CS kami yang siap\r\n              membantu anda 24 jam untuk membantu pemesanan bunga secara online dan offline.\r\n            </p>', NULL, 1, 1, NULL, '2021-11-17 22:03:28', '2021-11-17 22:07:17', NULL),
 ('pengaturan_deskripsi', 'Deskripsi Situs', NULL, 1, 1, NULL, '2022-03-12 16:34:29', '2022-03-12 16:47:57', NULL),
-('pengaturan_icon', '63da12e493557e1e0b589d3fd2d20d85.png', '793a8468d61da53b4591901e3a252e87.png', 1, 1, NULL, '2022-03-12 16:34:29', '2022-03-12 16:52:54', NULL),
+('pengaturan_icon', '63da12e493557e1e0b589d3fd2d20d85.png', 'fd6a899a0c7c47dd592b74b8c3b81093.ico', 1, 1, NULL, '2022-03-12 16:34:29', '2022-03-12 17:16:08', NULL),
 ('pengaturan_title', 'Serabut Kelapa', 'Serabut Kelapa', 1, 1, NULL, '2022-03-12 16:34:29', '2022-03-12 16:47:57', NULL),
 ('product', 'Bunga Terbaik Dari Kami', 'BUNGA APA YANG ANDA CARI HARI INI ?', 1, 1, NULL, '2021-11-18 09:59:33', '2021-11-18 09:59:52', NULL),
 ('product2', 'Kamu Mungkin Juga Suka', 'PRODUK LAIN KAMI', 1, 1, NULL, '2021-11-19 07:14:04', '2021-11-19 07:16:22', NULL),

@@ -45,8 +45,8 @@ Footer
     copyright [b]
 
 Pengaturan
-    Judul Situs [b]
+    Judul Situs 2 [b]
     Deskripsi Situs // <meta name="description" content="Your description goes here"> []
-    Nama Aplikasi []
-    Favicon []
-    Icon Aplikasi []
+    Nama Aplikasi 1 []
+    Favicon 2[]
+    Icon Aplikasi 1[]

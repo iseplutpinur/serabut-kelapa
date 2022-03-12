@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2022 at 10:13 AM
+-- Generation Time: Mar 12, 2022 at 10:53 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -166,6 +166,9 @@ INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, 
 ('offer2', 'Terbaik Dan Terpercaya', 'TUNGGU APA LAGI', 1, 1, NULL, '2021-11-17 22:03:28', '2021-11-17 22:06:50', NULL),
 ('offer_decritpion', '<p><span class=\"fw-bold\">Toko Bunga Ucapan Bandung</span> merupakan salah satu toko bunga\r\n              terbaik di <span class=\"fw-bold\">Kota Bandung</span> dengan produk kami berbagai macam\r\n              karangan bunga dan rangkaian bunga seperti :\r\n            </p>\r\n            <br>\r\n            <div class=\"container\">\r\n              <ul style=\"list-style-type: disc;\">\r\n                <li>PAPAN BUNGA Single 2in1 Steroform</li>\r\n                <li>HANDBOUQUET</li>\r\n                <li>BOUQUET ( Meja, Standing, box )</li>\r\n                <li>SALIB, KRANS DUKA</li>\r\n                <li>Bunga Semat / kantong</li>\r\n                <li>Dekorasi Bahagia, Duka</li>\r\n                <li>Parcel Buah, Cookies</li>\r\n                <li>dll.</li>\r\n              </ul>\r\n            </div>\r\n\r\n            <br>\r\n            <p>Produk yang kami sediakan menggunakan bunga yang fresh dan bermacam warna yang bisa\r\n              disesuaikan untuk moment Anda. Selain itu kami juga menggunakan bunga buatan untuk pengganti\r\n              bunga asli agar karangan bunga Anda tidak cepat layu.</p>', NULL, 1, 1, NULL, '2021-11-17 21:17:10', '2022-01-10 17:44:17', NULL),
 ('offer_decritpion2', '            <p>Toko Bunga Papan Ucapan Bandung menawarka proses pemesanan yang sangat mudah, tinggal\r\n              cari\r\n              produk yang Anda inginkan, atau rekomendasi produk sesuai dengan moment yang Anda\r\n              butuhkan\r\n              melalui katalog produk di website ini, maupun langsung hubungi team CS kami yang siap\r\n              membantu anda 24 jam untuk membantu pemesanan bunga secara online dan offline.\r\n            </p>', NULL, 1, 1, NULL, '2021-11-17 22:03:28', '2021-11-17 22:07:17', NULL),
+('pengaturan_deskripsi', 'Deskripsi Situs', NULL, 1, 1, NULL, '2022-03-12 16:34:29', '2022-03-12 16:47:57', NULL),
+('pengaturan_icon', '63da12e493557e1e0b589d3fd2d20d85.png', '793a8468d61da53b4591901e3a252e87.png', 1, 1, NULL, '2022-03-12 16:34:29', '2022-03-12 16:52:54', NULL),
+('pengaturan_title', 'Serabut Kelapa', 'Serabut Kelapa', 1, 1, NULL, '2022-03-12 16:34:29', '2022-03-12 16:47:57', NULL),
 ('product', 'Bunga Terbaik Dari Kami', 'BUNGA APA YANG ANDA CARI HARI INI ?', 1, 1, NULL, '2021-11-18 09:59:33', '2021-11-18 09:59:52', NULL),
 ('product2', 'Kamu Mungkin Juga Suka', 'PRODUK LAIN KAMI', 1, 1, NULL, '2021-11-19 07:14:04', '2021-11-19 07:16:22', NULL),
 ('produk_judul', 'Our Product', 'on', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-11 17:19:31', NULL),
@@ -256,7 +259,8 @@ INSERT INTO `menu` (`menu_id`, `menu_menu_id`, `menu_nama`, `menu_keterangan`, `
 (136, 0, 'Testimoni', '-', 6, 'far fa-star', 'admin/testimoni', 'Aktif', '2022-03-10 15:15:13'),
 (137, 0, 'Team', '-', 7, 'fas fa-user-friends', 'admin/team', 'Aktif', '2022-03-10 15:16:17'),
 (138, 0, 'Kontak', '-', 8, 'fas fa-phone', 'admin/kontak', 'Aktif', '2022-03-10 15:17:30'),
-(139, 0, 'Footer', '-', 9, 'far fa-file', 'admin/footer', 'Aktif', '2022-03-10 15:18:39');
+(139, 0, 'Footer', '-', 9, 'far fa-file', 'admin/footer', 'Aktif', '2022-03-10 15:18:39'),
+(140, 2, 'Aplikasi', '-', 0, 'far fa-circle', 'admin/pengaturan', 'Aktif', '2022-03-12 09:28:34');
 
 -- --------------------------------------------------------
 
@@ -358,7 +362,8 @@ INSERT INTO `role_aplikasi` (`rola_id`, `rola_menu_id`, `rola_lev_id`, `created_
 (264, 137, 1, '2022-03-10 15:19:27'),
 (265, 135, 1, '2022-03-10 15:19:27'),
 (266, 133, 1, '2022-03-10 15:19:28'),
-(272, 131, 1, '2022-03-10 16:16:12');
+(272, 131, 1, '2022-03-10 16:16:12'),
+(273, 140, 1, '2022-03-12 09:28:45');
 
 -- --------------------------------------------------------
 
@@ -646,7 +651,7 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
+  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT for table `pesan_masuk`
@@ -664,7 +669,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `role_aplikasi`
 --
 ALTER TABLE `role_aplikasi`
-  MODIFY `rola_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=273;
+  MODIFY `rola_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=274;
 
 --
 -- AUTO_INCREMENT for table `role_users`

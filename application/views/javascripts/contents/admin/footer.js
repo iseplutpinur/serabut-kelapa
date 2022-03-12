@@ -49,7 +49,7 @@ $(document).ready(() => {
         { "data": "nama" },
         {
           "data": "icon", render(data, type, full, meta) {
-            return `<i class="${data}">${data}</i>`
+            return `<i class="${data}"></i>${data}`
           }
         },
         {

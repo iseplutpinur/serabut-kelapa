@@ -24,6 +24,8 @@ function getBg(int $counter): string
 
   <!-- gallery -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/template/front/css/baguetteBox.min.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="<?= base_url('assets/template/') ?>plugins/fontawesome-free/css/all.min.css">
 </head>
 
 

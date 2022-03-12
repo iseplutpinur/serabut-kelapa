@@ -85,6 +85,11 @@ class Render_Controller extends CI_Controller
 	protected $key_footer_show = 'footer_show';
 	protected $key_footer_alamat = 'footer_alamat';
 	protected $key_footer_copyright = 'footer_copyright';
+
+	// == footer
+	protected $key_pengaturan_title = 'pengaturan_title';
+	protected $key_pengaturan_deskripsi = 'pengaturan_deskripsi';
+	protected $key_pengaturan_icon = 'pengaturan_icon';
 	// key value =========================================================================================================
 	protected function preRender()
 	{

@@ -36,26 +36,17 @@ Team
     table team [b]
 
 Contact 
-    Pesan Masuk []
-        Judul
-        Tabel Pesan Masuk
-        Pesan front 
-
-    Google maps Latitude longtitude
+    Pesan Masuk [b]
+    Google maps Latitude longtitude[b]
 
 Footer 
-    table sosial media []
-    alamat []
-    copyright []
+    table sosial media [b]
+    alamat [b]
+    copyright [b]
 
 Pengaturan
-    Nomor whatsapp []
-    Judul Situs []
+    Judul Situs [b]
     Deskripsi Situs // <meta name="description" content="Your description goes here"> []
-
-
-catatan:
-Home link tombol whatsapp
-tambah key value link untuk ahref tombol
-
-key value favicon
+    Nama Aplikasi []
+    Favicon []
+    Icon Aplikasi []

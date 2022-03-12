@@ -34,16 +34,16 @@ class Footer extends Render_Controller
     {
         // alamat
         $main = $this->input->post('main_alamat');
-        $show = $this->input->post('show_alamat') ?? 0;
+        $show = $this->input->post('show_alamat') == null ? 0 : 1;
         $alamat = $this->key_set($this->key_footer_alamat, $main, $show);
 
         // copyright
         $main = $this->input->post('main_copyright');
-        $show = $this->input->post('show_copyright') ?? 0;
+        $show = $this->input->post('show_copyright') == null ? 0 : 1;
         $copyright = $this->key_set($this->key_footer_copyright, $main, $show);
 
         // perlihatkan konten
-        $show_content = $this->key_set($this->key_footer_show, $this->input->post('show_content') ?? 0, null);
+        $show_content = $this->key_set($this->key_footer_show, $this->input->post('show_content') == null ? 0 : 1, null);
 
         $result = $show_content &&  $alamat && $copyright;
         $this->output_json($result);

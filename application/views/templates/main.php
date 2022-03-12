@@ -2,8 +2,8 @@
 $counter = 1;
 function getBg(int $counter): string
 {
-  if ($counter % 2 == 0)  return '';
-  else return 'bg-light';
+  if ($counter % 2 == 0)  return 'bg-light';
+  else return 'bg-white';
 }
 ?>
 <!DOCTYPE html>
@@ -13,11 +13,14 @@ function getBg(int $counter): string
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sabut Kelapa</title>
+  <title><?= $pengaturan['title']['value2'] ?></title>
+  <meta name="description" content="<?= $pengaturan['deskripsi']['value1'] ?>">
+
+  <!-- icon -->
+
+  <link rel="icon" href="<?= base_url('files/image/pengaturan/' . $pengaturan['icon']['value2']) ?>">
 
   <link rel="stylesheet" href="<?= base_url() ?>assets/template/front/css/themify-icons.css">
-  <!-- Favicon icon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>assets/template/front/images/favicon.png">
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/template/front/css/style.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/template/front/css/feather.css">
@@ -35,23 +38,27 @@ function getBg(int $counter): string
     <div class="header-wrapper pt-3 pb-3 shadow-none pos-fixed position-absolute">
       <div class="container">
         <div class="d-flex flex-row justify-content-between">
-          <a href="index.html">
-            <h1 class="fredoka-font ls-3 fw-700 text-current font-xxl">Serabut Kelapa
-              <span class="d-block font-xsssss ls-1 text-grey-500 open-font ">kualitas Terbaik</span>
-            </h1>
-          </a>
+          <?php if ($home_logo['value2'] == 1) : ?>
+            <a href="">
+              <img style="max-width: 200px;" src="<?= base_url('files/image/home/') . $home_logo['value1'] ?>" alt="Site Logo">
+            </a>
+          <?php endif ?>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav nav-menu float-none text-center">
               <?php if ($home_show['value1'] == 1) : ?>
                 <li class="nav-item"><a class="nav-link nav" href="#home">Home</a></li>
               <?php endif; ?>
+
               <li class="nav-item"><a class="nav-link nav" href="#about_us">About Us</a></li>
               <li class="nav-item"><a class="nav-link nav" href="#gallery">Gallery</a></li>
               <li class="nav-item"><a class="nav-link nav" href="#feature">Feature</a></li>
               <li class="nav-item"><a class="nav-link nav" href="#product">Product</a></li>
               <li class="nav-item"><a class="nav-link nav" href="#testimoni">Testimoni</a></li>
               <li class="nav-item"><a class="nav-link nav" href="#team">Team</a></li>
-              <li class="nav-item"><a class="nav-link nav" href="#contact">Contact Us</a></li>
+
+              <?php if ($kontak_show['value1'] == 1) : ?>
+                <li class="nav-item"><a class="nav-link nav" href="#contact">Contact Us</a></li>
+              <?php endif ?>
             </ul>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,17 +69,25 @@ function getBg(int $counter): string
     </div>
 
     <?php if ($home_show['value1'] == 1) : ?>
-      <div class="banner-wrapper bg-image-cover bg-image-bottomcenter" style="background-image: url(<?= base_url() ?>assets/template/front/images/bg-layer2.png);" id="home">
+      <div class="banner-wrapper bg-image-cover bg-image-bottomcenter" <?php if ($home_foto_jumbotron['value2'] == 1) : ?> style="background-image: url(<?= base_url('files/image/home/') . $home_foto_jumbotron['value1'] ?>);" <?php endif ?> id="home">
         <div class="container">
           <div class="row">
             <div class="col-xl-6 col-lg-6 vh-lg--100 align-items-center d-flex sm-mt-7">
               <div class="card w-100 border-0 bg-transparent d-block sm-mb-5 sm-mt-3">
-                <h4 class="fw-700 text-white display4-size display4-lg-size display4-md-size lh-1 mb-0 os-init mt-5 " data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"><?= $home_judul_utama['value1'] ?></h4>
-                <h4 class=" fw-500 mb-4 lh-30 font-xsss text-grey-500 mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
+                <?php if ($home_judul_utama['value2'] == 1) : ?>
+                  <h4 class="fw-700 text-white display4-size display4-lg-size display4-md-size lh-1 mb-0 os-init mt-5 " data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"><?= $home_judul_utama['value1'] ?></h4>
+                <?php endif ?>
+                <?php if ($home_sub_judul['value2'] == 1) : ?>
+                  <h4 class=" fw-500 mb-4 lh-30 font-xsss text-grey-500 mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
+                <?php endif ?>
 
-                <a href="#" class="btn border-0 w200 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-1 os-init" data-aos="fade-up" data-aos-delay="500" data-aos-duration="400"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
-                  </svg> Pesan Sekarang</a>
+                <?php if ($home_btn_title['value2'] == 1) : ?>
+                  <a href="<?= $home_btn_link['value1'] ?>" class="btn border-0 w200 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-1 os-init" data-aos="fade-up" data-aos-delay="500" data-aos-duration="400">
+                    <?= $home_btn_title['value1'] ?>
+                  </a>
+                <?php endif ?>
+
+
               </div>
             </div>
             <div class="col-lg-6 align-items-center d-flex vh-lg--100 ">
@@ -82,44 +97,32 @@ function getBg(int $counter): string
       </div>
     <?php endif; ?>
 
+    <?php if ($about_show['value1'] == 1) : ?>
+      <div class="how-to-work mt-5 pt-5   <?php echo getBg($counter);
+                                          $counter++ ?>" id="about_us">
+        <div class="container">
+          <div class="d-lg-flex flex-row flex-row-reverse justify-content-between">
+            <?php if ($about_foto['value2'] == 1) : ?>
+              <div class="mb-4 ml-lg-5">
+                <img src="<?= base_url('files/image/about/') . $about_foto['value1'] ?>" alt="image" class="rounded-lg img-fluid shadow-xs">
+              </div>
+            <?php endif ?>
 
-    <div class="how-to-work mt-5 pt-5" id="about_us">
-      <div class="container">
-        <div class="d-lg-flex flex-row flex-row-reverse">
-
-          <div class="width-50 mb-4">
-            <img src="<?= base_url() ?>assets/template/front/images/blog-45.jpg" alt="image" class="rounded-lg img-fluid shadow-xs">
-          </div>
-          <div class="width-50 page-title style1">
-            <h2 class="fw-700 text-grey-800 display1-size display2-md-size lh-3">PT. Universal Coco
-              Indonesia</h2>
-            <p class="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0  mt-3 w-75 w-xs-90">In the beginning,
-              our company was engaged in manufacturing where we processed coconut derivative products,
-              namely coconut shells into coconut shell charcoal. And after that our company expanded and
-              expanded into coconut plantations, to process more derivative products.</p>
-            <h4 class="fw-600 font-xs mt-3 mb-2"><i class="ti-check btn-round-xs text-white bg-success mr-2 border"></i> Dapat menyerap air
-              dengan baik
-            </h4>
-            <h4 class="fw-600 font-xs mt-3 mb-2"><i class="ti-check btn-round-xs text-white bg-success mr-2 border"></i> Lebih tahan hama
-            </h4>
-            <h4 class="fw-600 font-xs mt-3 mb-2"><i class="ti-check btn-round-xs text-white bg-success mr-2 border"></i> Bentuknya mirip
-              tanah
-            </h4>
-            <h4 class="fw-600 font-xs mt-3 mb-2"><i class="ti-check btn-round-xs text-white bg-success mr-2 border"></i> Boleh guna kembali
-              menjadi medium tanaman baru
-            </h4>
-            <h4 class="fw-600 font-xs mt-3 mb-2"><i class="ti-check btn-round-xs text-white bg-success mr-2 border"></i> Mudah digunakan
-              untuk yang baru mula belajar tanam
-            </h4>
+            <div class="width-50 page-title style1">
+              <?php if ($about_judul['value2'] == 1) : ?>
+                <h2 class="fw-700 text-grey-800 display1-size display2-md-size lh-3"><?= $about_judul['value1'] ?></h2>
+              <?php endif ?>
+              <?php if ($about_detail['value2'] == 1) echo $about_detail['value1']; ?>
+            </div>
 
           </div>
-
         </div>
-      </div>
-    </div>
+      </div><br><br><br>
+    <?php endif ?>
 
-    <br><br><br>
-    <div class="how-to-work pt-lg--5 pb-lg--7 bg-light" id="gallery">
+    <div class="how-to-work pt-lg--5 pb-lg--7   <?php echo getBg($counter);
+                                                $counter++ ?>" id="gallery">
+
       <div class="container">
         <div class="row justify-content-center">
           <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center">
@@ -326,7 +329,7 @@ function getBg(int $counter): string
                       for household use both indoor and outdoor. Also, it can be used in food
                       industries, for barbecue, stove fuel, metallurgy, etc.</p>
 
-                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=+6282127598454">Contact Us
+                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>">Contact Us
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" style="margin-left: 3px;" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
@@ -350,7 +353,7 @@ function getBg(int $counter): string
                       Finally, it is packed in jute bags and transported to a processing facility.
                     </p>
 
-                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=+6282127598454">Contact Us
+                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>">Contact Us
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" style="margin-left: 3px;" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
@@ -376,7 +379,7 @@ function getBg(int $counter): string
                       at 24 °C (75 °F) without spoiling.
                     </p>
 
-                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=+6282127598454">Contact Us
+                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>">Contact Us
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" style="margin-left: 3px;" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
@@ -403,7 +406,7 @@ function getBg(int $counter): string
                       net
                     </p>
 
-                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=+6282127598454">Contact Us
+                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>">Contact Us
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" style="margin-left: 3px;" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
@@ -427,7 +430,7 @@ function getBg(int $counter): string
                       contains the oil.
                     </p>
 
-                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=+6282127598454">Contact Us
+                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>">Contact Us
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" style="margin-left: 3px;" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
@@ -452,7 +455,7 @@ function getBg(int $counter): string
                       ensure secure packaging of the cocopeat blocks.
                     </p>
 
-                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=+6282127598454">Contact Us
+                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>">Contact Us
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" style="margin-left: 3px;" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
@@ -475,7 +478,7 @@ function getBg(int $counter): string
                       Coconuts are graded by its cutting size, for example, fine grade and medium
                       grade where fine grade is smaller particle size than the medium grade.</p>
 
-                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=+6282127598454">Contact Us
+                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>">Contact Us
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" style="margin-left: 3px;" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
@@ -502,7 +505,7 @@ function getBg(int $counter): string
                       and its subsequent benefits.
                     </p>
 
-                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=+6282127598454">Contact Us
+                    <a class="btn btn-success mt-md-4" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>">Contact Us
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" style="margin-left: 3px;" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
@@ -783,372 +786,379 @@ function getBg(int $counter): string
       </div>
     </div>
 
-    <div class="section" id="contact">
-      <div id="map" class="rounded-lg overflow-hidden" style="height: 500px;"></div>
-      <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOdKtT5fapH3_OfhV3HFeZjqFs4OfNIew&amp;callback=mapinitialize" type="text/javascript"></script>
-      <script type="text/javascript">
-        function mapinitialize() {
-          var latlng = new google.maps.LatLng(-6.896598, 107.630872);
-          var myOptions = {
-            zoom: 16,
-            center: latlng,
-            scrollwheel: false,
-            scaleControl: false,
-            disableDefaultUI: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            // Google Map Color Styles
-            styles: [{
-              "featureType": "all",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "on"
-              }]
-            }, {
-              "featureType": "administrative",
-              "elementType": "labels.text.fill",
-              "stylers": [{
-                "color": "#444444"
-              }]
-            }, {
-              "featureType": "administrative.province",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "administrative.locality",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "administrative.neighborhood",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "administrative.land_parcel",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "administrative.land_parcel",
-              "elementType": "labels.text",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "landscape",
-              "elementType": "all",
-              "stylers": [{
-                "color": "#f2f2f2"
-              }]
-            }, {
-              "featureType": "landscape.man_made",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "simplified"
-              }]
-            }, {
-              "featureType": "poi",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "off"
-              }, {
-                "color": "#cee9de"
-              }, {
-                "saturation": "2"
-              }, {
-                "weight": "0.80"
-              }]
-            }, {
-              "featureType": "poi.attraction",
-              "elementType": "geometry.fill",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "poi.park",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "on"
-              }]
-            }, {
-              "featureType": "road",
-              "elementType": "all",
-              "stylers": [{
-                "saturation": -100
-              }, {
-                "lightness": 45
-              }]
-            }, {
-              "featureType": "road.highway",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "simplified"
-              }]
-            }, {
-              "featureType": "road.highway",
-              "elementType": "geometry.fill",
-              "stylers": [{
-                "visibility": "on"
-              }, {
-                "color": "#f5d6d6"
-              }]
-            }, {
-              "featureType": "road.highway",
-              "elementType": "labels.text",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "road.highway",
-              "elementType": "labels.icon",
-              "stylers": [{
-                "hue": "#ff0000"
-              }, {
-                "visibility": "on"
-              }]
-            }, {
-              "featureType": "road.highway.controlled_access",
-              "elementType": "labels.text",
-              "stylers": [{
-                "visibility": "simplified"
-              }]
-            }, {
-              "featureType": "road.highway.controlled_access",
-              "elementType": "labels.icon",
-              "stylers": [{
-                "visibility": "on"
-              }, {
-                "hue": "#0064ff"
-              }, {
-                "gamma": "1.44"
-              }, {
-                "lightness": "-3"
-              }, {
-                "weight": "1.69"
-              }]
-            }, {
-              "featureType": "road.arterial",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "on"
-              }]
-            }, {
-              "featureType": "road.arterial",
-              "elementType": "labels.text",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "road.arterial",
-              "elementType": "labels.icon",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "road.local",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "on"
-              }]
-            }, {
-              "featureType": "road.local",
-              "elementType": "labels.text",
-              "stylers": [{
-                "visibility": "simplified"
-              }, {
-                "weight": "0.31"
-              }, {
-                "gamma": "1.43"
-              }, {
-                "lightness": "-5"
-              }, {
-                "saturation": "-22"
-              }]
-            }, {
-              "featureType": "transit",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            }, {
-              "featureType": "transit.line",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "on"
-              }, {
-                "hue": "#ff0000"
-              }]
-            }, {
-              "featureType": "transit.station.airport",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "simplified"
-              }, {
-                "hue": "#ff0045"
-              }]
-            }, {
-              "featureType": "transit.station.bus",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "on"
-              }, {
-                "hue": "#00d1ff"
-              }]
-            }, {
-              "featureType": "transit.station.bus",
-              "elementType": "labels.text",
-              "stylers": [{
-                "visibility": "simplified"
-              }]
-            }, {
-              "featureType": "transit.station.rail",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "simplified"
-              }, {
-                "hue": "#00cbff"
-              }]
-            }, {
-              "featureType": "transit.station.rail",
-              "elementType": "labels.text",
-              "stylers": [{
-                "visibility": "simplified"
-              }]
-            }, {
-              "featureType": "water",
-              "elementType": "all",
-              "stylers": [{
-                "color": "#46bcec"
-              }, {
-                "visibility": "on"
-              }]
-            }, {
-              "featureType": "water",
-              "elementType": "geometry.fill",
-              "stylers": [{
-                "weight": "1.61"
-              }, {
-                "color": "#cde2e5"
-              }, {
-                "visibility": "on"
-              }]
-            }]
-          };
-          var map = new google.maps.Map(document.getElementById("map"), myOptions);
 
-          var image = "<?= base_url() ?>assets/template/front/images/map-marker.png";
-          var image = new google.maps.MarkerImage("<?= base_url() ?>assets/template/front/images/map-marker.png", null, null, null, new google.maps.Size(50, 50));
-          var marker = new google.maps.Marker({
-            map: map,
-            icon: image,
-            position: map.getCenter()
-          });
+    <?php if ($kontak_show['value1'] == 1) : ?>
+      <div class="section" id="contact">
+        <div id="map" class="rounded-lg overflow-hidden" style="height: 500px;"></div>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOdKtT5fapH3_OfhV3HFeZjqFs4OfNIew&amp;callback=mapinitialize" type="text/javascript"></script>
+        <script type="text/javascript">
+          function mapinitialize() {
+            var latlng = new google.maps.LatLng(<?= $kontak_koordinat['value1'] ?>, <?= $kontak_koordinat['value2'] ?>);
+            var myOptions = {
+              zoom: 16,
+              center: latlng,
+              scrollwheel: false,
+              scaleControl: false,
+              disableDefaultUI: false,
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              // Google Map Color Styles
+              styles: [{
+                "featureType": "all",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "on"
+                }]
+              }, {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                  "color": "#444444"
+                }]
+              }, {
+                "featureType": "administrative.province",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "administrative.locality",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "administrative.neighborhood",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "administrative.land_parcel",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "administrative.land_parcel",
+                "elementType": "labels.text",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [{
+                  "color": "#f2f2f2"
+                }]
+              }, {
+                "featureType": "landscape.man_made",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "simplified"
+                }]
+              }, {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "off"
+                }, {
+                  "color": "#cee9de"
+                }, {
+                  "saturation": "2"
+                }, {
+                  "weight": "0.80"
+                }]
+              }, {
+                "featureType": "poi.attraction",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "poi.park",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "on"
+                }]
+              }, {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [{
+                  "saturation": -100
+                }, {
+                  "lightness": 45
+                }]
+              }, {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "simplified"
+                }]
+              }, {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                  "visibility": "on"
+                }, {
+                  "color": "#f5d6d6"
+                }]
+              }, {
+                "featureType": "road.highway",
+                "elementType": "labels.text",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "road.highway",
+                "elementType": "labels.icon",
+                "stylers": [{
+                  "hue": "#ff0000"
+                }, {
+                  "visibility": "on"
+                }]
+              }, {
+                "featureType": "road.highway.controlled_access",
+                "elementType": "labels.text",
+                "stylers": [{
+                  "visibility": "simplified"
+                }]
+              }, {
+                "featureType": "road.highway.controlled_access",
+                "elementType": "labels.icon",
+                "stylers": [{
+                  "visibility": "on"
+                }, {
+                  "hue": "#0064ff"
+                }, {
+                  "gamma": "1.44"
+                }, {
+                  "lightness": "-3"
+                }, {
+                  "weight": "1.69"
+                }]
+              }, {
+                "featureType": "road.arterial",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "on"
+                }]
+              }, {
+                "featureType": "road.arterial",
+                "elementType": "labels.text",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "road.local",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "on"
+                }]
+              }, {
+                "featureType": "road.local",
+                "elementType": "labels.text",
+                "stylers": [{
+                  "visibility": "simplified"
+                }, {
+                  "weight": "0.31"
+                }, {
+                  "gamma": "1.43"
+                }, {
+                  "lightness": "-5"
+                }, {
+                  "saturation": "-22"
+                }]
+              }, {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              }, {
+                "featureType": "transit.line",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "on"
+                }, {
+                  "hue": "#ff0000"
+                }]
+              }, {
+                "featureType": "transit.station.airport",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "simplified"
+                }, {
+                  "hue": "#ff0045"
+                }]
+              }, {
+                "featureType": "transit.station.bus",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "on"
+                }, {
+                  "hue": "#00d1ff"
+                }]
+              }, {
+                "featureType": "transit.station.bus",
+                "elementType": "labels.text",
+                "stylers": [{
+                  "visibility": "simplified"
+                }]
+              }, {
+                "featureType": "transit.station.rail",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "simplified"
+                }, {
+                  "hue": "#00cbff"
+                }]
+              }, {
+                "featureType": "transit.station.rail",
+                "elementType": "labels.text",
+                "stylers": [{
+                  "visibility": "simplified"
+                }]
+              }, {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [{
+                  "color": "#46bcec"
+                }, {
+                  "visibility": "on"
+                }]
+              }, {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                  "weight": "1.61"
+                }, {
+                  "color": "#cde2e5"
+                }, {
+                  "visibility": "on"
+                }]
+              }]
+            };
+            var map = new google.maps.Map(document.getElementById("map"), myOptions);
 
-          var contentString = '<b>Office</b><br>Streetname 13<br>50001 Sydney';
-          var infowindow = new google.maps.InfoWindow({
-            content: contentString
-          });
+            var image = "<?= base_url() ?>assets/template/front/images/map-marker.png";
+            var image = new google.maps.MarkerImage("<?= base_url() ?>assets/template/front/images/map-marker.png", null, null, null, new google.maps.Size(50, 50));
+            var marker = new google.maps.Marker({
+              map: map,
+              icon: image,
+              position: map.getCenter()
+            });
 
-          google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map, marker);
-          });
+            var contentString = '<b>Office</b><br>Streetname 13<br>50001 Sydney';
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.open(map, marker);
+            });
 
 
-        }
-        mapinitialize();
-      </script>
-    </div>
+          }
+          mapinitialize();
+        </script>
+      </div>
 
-    <div class="map-wrapper">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="contact-wrap bg-white shadow-lg rounded-lg position-relative">
-              <h1 class="text-grey-900 fw-700 display3-size mb-5 lh-1">Contact us</h1>
-              <div id="alert">
+      <div class="map-wrapper  <?php echo getBg($counter);
+                                $counter++ ?>">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="contact-wrap bg-white shadow-lg rounded-lg position-relative">
+                <?php if ($kontak_judul['value2'] == 1) : ?>
+                  <h1 class="text-grey-900 fw-700 display3-size mb-5 lh-1"><?= $kontak_judul['value1'] ?></h1>
+                <?php endif ?>
+                <div id="alert">
 
-              </div>
-              <form action="#" id="fpesan">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12">
-                    <div class="form-group mb-3">
-                      <input type="text" class="form-control style2-input bg-color-none " name="nama" placeholder="Nama">
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                    <div class="form-group mb-3">
-                      <input type="email" class="form-control style2-input bg-color-none " name="email" placeholder="Email">
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-group mb-3 md-mb-2">
-                      <textarea class="w-100 h125 style2-textarea p-3 form-control" name="pesan" placeholder="Pesan"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <button type="submit" class="rounded-lg style1-input bg-current text-white text-center font-xss fw-500 border-2 border-0 p-0 w175">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
                 </div>
+                <form action="#" id="fpesan">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                      <div class="form-group mb-3">
+                        <input type="text" class="form-control style2-input bg-color-none " name="nama" placeholder="Nama">
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                      <div class="form-group mb-3">
+                        <input type="email" class="form-control style2-input bg-color-none " name="email" placeholder="Email">
+                      </div>
+                    </div>
 
-              </form>
+                    <div class="col-12">
+                      <div class="form-group mb-3 md-mb-2">
+                        <textarea class="w-100 h125 style2-textarea p-3 form-control" name="pesan" placeholder="Pesan"></textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <button type="submit" class="rounded-lg style1-input bg-current text-white text-center font-xss fw-500 border-2 border-0 p-0 w175">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <?php endif; ?>
 
-
-    <div class="footer-wrapper bg-light my-0">
-      <div class="container">
-        <div class="d-lg-flex flex-row justify-content-between  align-items-end">
-          <div>
-            <a href="index.html">
-              <h1 class="fredoka-font ls-3 fw-700 text-current font-xxl">Serabut Kelapa
-                <span class="d-block font-xsssss ls-1 text-grey-500 open-font ">kualitas Terbaik</span>
-              </h1>
-            </a>
+    <?php if ($footer_show['value1'] == 1) : ?>
+      <!-- footer -->
+      <div class="footer-wrapper my-0 <?php echo getBg($counter);
+                                      $counter++ ?>">
+        <div class="container">
+          <div class="d-lg-flex flex-row justify-content-between  align-items-end">
+            <?php if ($home_logo['value2'] == 1) : ?>
+              <div>
+                <a href="">
+                  <img style="max-width: 200px;" src="<?= base_url('files/image/home/') . $home_logo['value1'] ?>" alt="Site Logo">
+                </a>
+              </div>
+            <?php endif ?>
+            <div>
+              <p class="w-100"><?= $footer_alamat['value1'] ?>
+              </p>
+            </div>
+            <div>
+              <ul class="list-inline">
+                <?php foreach ($footer_sosmed as $sosmed) : ?>
+                  <li class="list-inline-item mr-3"><a href="<?= $sosmed['nama'] ?>" title="<?= $sosmed['nama'] ?>"><i class="<?= $sosmed['icon'] ?> fa-2x"></i></a></li>
+                <?php endforeach; ?>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <p class="w-100">41 madison ave, floor 24 new work, NY 10010 1-877-932-7111, support@mail.com
-            </p>
-          </div>
-          <div>
-            <ul class="list-inline">
-              <li class="list-inline-item mr-3"><a href="#"><i class="ti-facebook font-sm"></i></a></li>
-              <li class="list-inline-item mr-3"><a href="#"><i class="ti-twitter-alt font-sm"></i></a>
-              </li>
-              <li class="list-inline-item mr-3"><a href="#"><i class="ti-linkedin font-sm"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="ti-instagram font-sm"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="middle-footer mt-5 pt-4"></div>
-          </div>
-          <div class="col-sm-12 lower-footer pt-0"></div>
-          <div class="col-sm-6 col-xs-12">
-            <p class="copyright-text">© 2021 copyright. All rights reserved.</p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="middle-footer mt-5 pt-4"></div>
+            </div>
+            <div class="col-sm-12 lower-footer pt-0"></div>
+            <div class="col-sm-6 col-xs-12">
+              <p class="copyright-text" id="coyright"></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <?php endif; ?>
 
   </div>
 
 
   <div class="d-flex flex-row-reverse">
-    <a href="https://api.whatsapp.com/send?phone=+6282127598454" class="btn btn-success" href="#" style="position:fixed; bottom:16px; right: 16px; z-index:999; padding: 8px; border-radius: 50px;">
+    <a href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>" class="btn btn-success" href="#" style="position:fixed; bottom:16px; right: 16px; z-index:999; padding: 8px; border-radius: 50px;">
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
       </svg>
@@ -1166,6 +1176,7 @@ function getBg(int $counter): string
       $('html, body').animate({
         scrollTop: destination,
       }, (destination / 5), 'linear');
+      document.title = `${this.innerText} | <?= $pengaturan['deskripsi']['value1'] ?>`;
     })
   </script>
 
@@ -1247,6 +1258,7 @@ function getBg(int $counter): string
         })
       });
     });
+    $('#coyright').html(`<?= $pengaturan['copyright']['value1'] ?>`);
   </script>
 </body>
 

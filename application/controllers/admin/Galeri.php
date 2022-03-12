@@ -107,16 +107,16 @@ class Galeri extends Render_Controller
     {
         // judul
         $main = $this->input->post('main_judul');
-        $show = $this->input->post('show_judul') ?? 0;
+        $show = $this->input->post('show_judul') == null ? 0 : 1;
         $judul = $this->key_set($this->key_galeri_judul, $main, $show);
 
         // sub_judul
         $main = $this->input->post('main_sub_judul');
-        $show = $this->input->post('show_sub_judul') ?? 0;
+        $show = $this->input->post('show_sub_judul') == null ? 0 : 1;
         $sub_judul = $this->key_set($this->key_galeri_sub_judul, $main, $show);
 
         // perlihatkan konten
-        $show_content = $this->key_set($this->key_galeri_show, $this->input->post('show_content') ?? 0, null);
+        $show_content = $this->key_set($this->key_galeri_show, $this->input->post('show_content') == null ? 0 : 1, null);
 
         $result = $show_content && $judul && $sub_judul;
         $this->output_json($result);

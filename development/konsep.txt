@@ -1,9 +1,9 @@
 Home
-    logo [b]
-    Judul Utama [b]
-    Sub Judul [b]
-    Foto Utama [b]
-    Tombol title [b]
+    logo [bf]
+    Judul Utama [bf]
+    Sub Judul [bf]
+    Foto Utama [fb]
+    Tombol title [bf]
 
 About Us
     judul [b]
@@ -36,17 +36,17 @@ Team
     table team [b]
 
 Contact 
-    Pesan Masuk [b]
-    Google maps Latitude longtitude[b]
+    Pesan Masuk [bf]
+    Google maps Latitude longtitude[bf]
 
 Footer 
-    table sosial media [b]
-    alamat [b]
-    copyright [b]
+    table sosial media [bf]
+    alamat [bf]
+    copyright [bf]
 
 Pengaturan
-    Judul Situs 2 [b]
-    Deskripsi Situs // <meta name="description" content="Your description goes here"> []
-    Nama Aplikasi 1 []
-    Favicon 2[]
-    Icon Aplikasi 1[]
+    Judul Situs 2 [bf]
+    Deskripsi Situs // <meta name="description" content="Your description goes here"> [bf]
+    Nama Aplikasi 1 [bf]
+    Favicon 2[bf]
+    Icon Aplikasi 1[bf]

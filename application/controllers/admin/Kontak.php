@@ -34,7 +34,7 @@ class Kontak extends Render_Controller
     {
         // judul
         $main = $this->input->post('main_judul');
-        $show = $this->input->post('show_judul') ?? 0;
+        $show = $this->input->post('show_judul') == null ? 0 : 1;
         $judul = $this->key_set($this->key_kontak_judul, $main, $show);
 
         // judul
@@ -43,7 +43,7 @@ class Kontak extends Render_Controller
         $koordinat = $this->key_set($this->key_kontak_koordinat, $latitiude, $logtitude);
 
         // perlihatkan konten
-        $show_content = $this->key_set($this->key_kontak_show, $this->input->post('show_content') ?? 0, null);
+        $show_content = $this->key_set($this->key_kontak_show, $this->input->post('show_content') == null ? 0 : 1, null);
 
         $result = $show_content &&  $judul && $koordinat;
         $this->output_json($result);

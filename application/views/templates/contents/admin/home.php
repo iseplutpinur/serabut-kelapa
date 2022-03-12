@@ -93,7 +93,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="main_btn_link">Tombol Link</label>
-                        <input type="text" class="form-control" id="main_btn_link" name="main_btn_link" placeholder="ex: http://google.com" value="<?= $btn_link['value1'] ?>" />
+                        <input type="url" class="form-control" id="main_btn_link" name="main_btn_link" placeholder="ex: http://google.com" value="<?= $btn_link['value1'] ?>" />
                     </div>
                 </div>
             </div>

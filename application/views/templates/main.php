@@ -49,12 +49,30 @@ function getBg(int $counter): string
                 <li class="nav-item"><a class="nav-link nav" href="#home">Home</a></li>
               <?php endif; ?>
 
-              <li class="nav-item"><a class="nav-link nav" href="#about_us">About Us</a></li>
-              <li class="nav-item"><a class="nav-link nav" href="#gallery">Gallery</a></li>
-              <li class="nav-item"><a class="nav-link nav" href="#feature">Feature</a></li>
-              <li class="nav-item"><a class="nav-link nav" href="#product">Product</a></li>
-              <li class="nav-item"><a class="nav-link nav" href="#testimoni">Testimoni</a></li>
-              <li class="nav-item"><a class="nav-link nav" href="#team">Team</a></li>
+              <?php if ($about_show['value1'] == 1) : ?>
+                <li class="nav-item"><a class="nav-link nav" href="#about_us">About Us</a></li>
+              <?php endif ?>
+
+              <?php if ($galeri_show['value1'] == 1) : ?>
+                <li class="nav-item"><a class="nav-link nav" href="#gallery">Gallery</a></li>
+              <?php endif ?>
+
+              <?php if ($feature_show['value1'] == 1) : ?>
+                <li class="nav-item"><a class="nav-link nav" href="#feature">Feature</a></li>
+              <?php endif ?>
+
+              <?php if ($produk_show['value1'] == 1) : ?>
+                <li class="nav-item"><a class="nav-link nav" href="#product">Product</a></li>
+              <?php endif ?>
+
+              <?php if ($testimoni_show['value1'] == 1) : ?>
+                <li class="nav-item"><a class="nav-link nav" href="#testimoni">Testimoni</a></li>
+              <?php endif ?>
+
+              <?php if ($team_show['value1'] == 1) : ?>
+                <li class="nav-item"><a class="nav-link nav" href="#team">Team</a></li>
+              <?php endif ?>
+
 
               <?php if ($kontak_show['value1'] == 1) : ?>
                 <li class="nav-item"><a class="nav-link nav" href="#contact">Contact Us</a></li>

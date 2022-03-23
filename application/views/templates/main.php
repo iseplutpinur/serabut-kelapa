@@ -158,8 +158,8 @@ function getBg(int $counter): string
     <?php endif ?>
 
     <?php if ($galeri_show['value1'] == 1) : ?>
-      <div class="how-to-work pt-lg--5 pb-lg--7 <?php echo getBg($counter);
-                                                $counter++ ?>  " id="gallery">
+      <div class="how-to-work pt-5 pb-lg--7 <?php echo getBg($counter);
+                                            $counter++ ?>  " id="gallery">
         <div class="container">
           <div class="row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center">

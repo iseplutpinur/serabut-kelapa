@@ -15,7 +15,7 @@ $(document).ready(function () {
                 $("#home_sub_judul").addClass('animate__animated animate__fadeInRight animate__faster');
                 $("#home_btn_title").addClass('animate__animated animate__fadeInUp animate__faster');
                 $("#fab_wa").addClass('animate__animated animate__fadeInUp animate__faster');
-            }, 600);
+            }, 200);
         }
     }
 

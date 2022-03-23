@@ -139,15 +139,15 @@ function getBg(int $counter): string
           <div class="d-lg-flex flex-row flex-row-reverse justify-content-between">
             <?php if ($about_foto['value2'] == 1) : ?>
               <div class="mb-4 ml-lg-5">
-                <img src="<?= base_url('files/image/about/') . $about_foto['value1'] ?>" alt="image" class="animate rounded-lg img-fluid shadow-xs">
+                <img src="<?= base_url('files/image/about/') . $about_foto['value1'] ?>" alt="image" data-animate="fadeInRight" class="animate rounded-lg img-fluid shadow-xs">
               </div>
             <?php endif ?>
 
             <div class="width-50 page-title style1">
               <?php if ($about_judul['value2'] == 1) : ?>
-                <h2 class="animate fw-700 text-grey-800 display1-size display2-md-size lh-3"><?= $about_judul['value1'] ?></h2>
+                <h2 class="animate fw-700 text-grey-800 display1-size display2-md-size lh-3" data-animate="fadeInLeft"><?= $about_judul['value1'] ?></h2>
               <?php endif ?>
-              <div class="animate">
+              <div class="animate" data-animate="fadeInUp">
                 <?php if ($about_detail['value2'] == 1) echo $about_detail['value1']; ?>
               </div>
             </div>
@@ -767,7 +767,7 @@ function getBg(int $counter): string
       const destination = $($(this).attr('href')).offset().top;
 
       let diff = Math.floor($(window).scrollTop() - destination);
-      const duration = Math.abs(diff) / 5;
+      const duration = Math.abs(diff) / 4;
       $('html, body').animate({
         scrollTop: destination - (diff <= 0 ? 0 : 88.6),
       }, duration, 'linear');
@@ -873,8 +873,10 @@ function getBg(int $counter): string
       // }, false);
 
       var lastScrollTop = 0;
-      $(window).scroll(function() {
-        var st = $(this).scrollTop();
+      var all_animate = false;
+
+      function handelWindowScoll() {
+        var st = $(window).scrollTop();
         var banner = $('.header-wrapper');
         setTimeout(function() {
           if (st > lastScrollTop) {
@@ -885,10 +887,6 @@ function getBg(int $counter): string
             banner.addClass('position-absolute');
             banner.removeClass('bg-dark');
             banner.addClass('navHide');
-            // banner.animate({
-            //   backgroundColor: "rgba(255,255,255,0.7)"
-            // }, 2000);
-
           } else {
             banner.removeClass('navHide');
             banner.removeClass('position-absolute');
@@ -897,18 +895,26 @@ function getBg(int $counter): string
           lastScrollTop = st;
         }, 100);
 
-        // initial
-        $('.animate').each(function() {
-          if (st > ($(this).offset().top - window.screen.height)) {
-            if (this.dataset.use == 0) {
-              this.dataset.use = 1;
-              const speed = this.dataset.speed;
-              console.log(`animate__animated animate__${this.dataset.animate} ${speed == '' ? '' : `animate__${speed}`}`);
-              $(this).addClass(`animate__animated animate__${this.dataset.animate} ${speed == '' ? '' : `animate__${speed}`}`);
+        if (!all_animate) {
+          let check = true;
+          $('.animate').each(function() {
+            if (st > ($(this).offset().top - window.screen.height)) {
+              if (this.dataset.use == 0) {
+                this.dataset.use = 1;
+                const speed = this.dataset.speed;
+                $(this).addClass(`animate__animated animate__${this.dataset.animate} ${speed == '' ? '' : `animate__${speed}`}`);
+              }
             }
-          }
-        })
-      });
+
+            if (this.dataset.use == 0) {
+              check = false;
+            }
+          })
+          all_animate = check;
+        }
+      }
+
+      $(window).scroll(handelWindowScoll);
 
       // initial
       $('.animate').each(function() {
@@ -924,6 +930,7 @@ function getBg(int $counter): string
         const use = $(this).data('use') ?? 0;
         if (use == 0) $(this).attr('data-use', 0);
       })
+      handelWindowScoll();
     });
 
 

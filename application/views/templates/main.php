@@ -29,6 +29,23 @@ function getBg(int $counter): string
   <link rel="stylesheet" href="<?= base_url() ?>assets/template/front/css/baguetteBox.min.css">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?= base_url('assets/template/') ?>plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <style>
+    .navHide {
+      animation: myfadeIn 1.5s;
+    }
+
+    @keyframes myfadeIn {
+      0% {
+        background-color: rgba(52, 58, 64, 1);
+      }
+
+      100% {
+        background-color: rgba(52, 58, 64, 0);
+      }
+    }
+  </style>
 </head>
 
 
@@ -93,18 +110,18 @@ function getBg(int $counter): string
             <div class="col-xl-6 col-lg-6 vh-lg--100 align-items-center d-flex sm-mt-7">
               <div class="card w-100 border-0 bg-transparent d-block sm-mb-5 sm-mt-3">
                 <?php if ($home_judul_utama['value2'] == 1) : ?>
-                  <h4 class="fw-700 text-white display4-size display4-lg-size display4-md-size lh-1 mb-0 os-init mt-5 " data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"><?= $home_judul_utama['value1'] ?></h4>
+                  <h4 id="home_judul_utama" class="fw-700 text-white display4-size display4-lg-size display4-md-size lh-1 mb-0 os-init mt-5 " data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"><?= $home_judul_utama['value1'] ?></h4>
                 <?php endif ?>
+
                 <?php if ($home_sub_judul['value2'] == 1) : ?>
-                  <h4 class=" fw-500 mb-4 lh-30 font-xsss text-grey-500 mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
+                  <h4 id="home_sub_judul" class="fw-500 mb-4 lh-30 font-xsss text-grey-500 mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
                 <?php endif ?>
 
                 <?php if ($home_btn_title['value2'] == 1) : ?>
-                  <a href="<?= $home_btn_link['value1'] ?>" class="btn border-0 w200 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-1 os-init" data-aos="fade-up" data-aos-delay="500" data-aos-duration="400">
+                  <a id="home_btn_title" href="<?= $home_btn_link['value1'] ?>" class="btn border-0 w200 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-1 os-init" data-aos="fade-up" data-aos-delay="500" data-aos-duration="400">
                     <?= $home_btn_title['value1'] ?>
                   </a>
                 <?php endif ?>
-
 
               </div>
             </div>
@@ -122,15 +139,17 @@ function getBg(int $counter): string
           <div class="d-lg-flex flex-row flex-row-reverse justify-content-between">
             <?php if ($about_foto['value2'] == 1) : ?>
               <div class="mb-4 ml-lg-5">
-                <img src="<?= base_url('files/image/about/') . $about_foto['value1'] ?>" alt="image" class="rounded-lg img-fluid shadow-xs">
+                <img src="<?= base_url('files/image/about/') . $about_foto['value1'] ?>" alt="image" class="animate rounded-lg img-fluid shadow-xs">
               </div>
             <?php endif ?>
 
             <div class="width-50 page-title style1">
               <?php if ($about_judul['value2'] == 1) : ?>
-                <h2 class="fw-700 text-grey-800 display1-size display2-md-size lh-3"><?= $about_judul['value1'] ?></h2>
+                <h2 class="animate fw-700 text-grey-800 display1-size display2-md-size lh-3"><?= $about_judul['value1'] ?></h2>
               <?php endif ?>
-              <?php if ($about_detail['value2'] == 1) echo $about_detail['value1']; ?>
+              <div class="animate">
+                <?php if ($about_detail['value2'] == 1) echo $about_detail['value1']; ?>
+              </div>
             </div>
 
           </div>
@@ -139,25 +158,24 @@ function getBg(int $counter): string
     <?php endif ?>
 
     <?php if ($galeri_show['value1'] == 1) : ?>
-      <div class="how-to-work pt-lg--5 pb-lg--7   <?php echo getBg($counter);
-                                                  $counter++ ?>" id="gallery">
-
+      <div class="how-to-work pt-lg--5 pb-lg--7 <?php echo getBg($counter);
+                                                $counter++ ?>  " id="gallery">
         <div class="container">
           <div class="row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center">
               <?php if ($galeri_judul['value2'] == 1) : ?>
-                <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">
+                <h2 class="animate text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block ">
                   <?= $galeri_judul['value1'] ?>
                 </h2>
               <?php endif ?>
               <?php if ($galeri_sub_judul['value2'] == 1) : ?>
-                <p class="fw-300 font-xsss lh-28 text-grey-500">
+                <p class="animate fw-300 font-xsss lh-28 text-grey-500">
                   <?= $galeri_sub_judul['value1'] ?>
                 </p>
               <?php endif ?>
             </div>
           </div>
-          <div class="tz-gallery">
+          <div class="animate tz-gallery">
             <div class="row">
               <?php foreach ($galeri_items as $item) : ?>
                 <div class="col-sm-6 col-md-4">
@@ -180,31 +198,33 @@ function getBg(int $counter): string
           <div class="d-flex flex-row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-3 ">
               <?php if ($feature_judul['value2'] == 1) : ?>
-                <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">
+                <h2 class="animate text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">
                   <?= $feature_judul['value1'] ?>
                 </h2>
               <?php endif; ?>
               <?php if ($feature_sub_judul['value2'] == 1) : ?>
-                <p class="fw-300 font-xsss lh-28 text-grey-500">
+                <p class="animate fw-300 font-xsss lh-28 text-grey-500">
                   <?= $feature_sub_judul['value1'] ?>
                 </p>
               <?php endif ?>
             </div>
           </div>
-          <div class="row">
-            <?php foreach ($feature_items as $item) : ?>
-              <div class="col-md-4">
-                <div style="width: auto; padding: 24px; display: flex; flex-direction: column; align-items: center;">
-                  <img src="<?= base_url('files/image/feature/') . $item['foto'] ?>" alt="<?= $item['nama'] ?>" style="max-width: 78px;">
-                  <h3 class="fw-600 font-xs mt-3 mb-2 mt-2">
-                    <?= $item['nama'] ?>
-                  </h3>
-                  <p class="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0  mt-3 w-75 w-xs-90 text-center">
-                    <?= $item['keterangan'] ?>
-                  </p>
+          <div class="animate">
+            <div class="row">
+              <?php foreach ($feature_items as $item) : ?>
+                <div class="col-md-4">
+                  <div style="width: auto; padding: 24px; display: flex; flex-direction: column; align-items: center;">
+                    <img src="<?= base_url('files/image/feature/') . $item['foto'] ?>" alt="<?= $item['nama'] ?>" style="max-width: 78px;">
+                    <h3 class="fw-600 font-xs mt-3 mb-2 mt-2">
+                      <?= $item['nama'] ?>
+                    </h3>
+                    <p class="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0  mt-3 w-75 w-xs-90 text-center">
+                      <?= $item['keterangan'] ?>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            <?php endforeach ?>
+              <?php endforeach ?>
+            </div>
           </div>
         </div>
       </div>
@@ -217,19 +237,19 @@ function getBg(int $counter): string
           <div class="row">
             <div class="col-lg-6 text-left mb-5 pb-0">
               <?php if ($produk_judul['value2'] == 1) : ?>
-                <h2 class="text-grey-800 fw-700 display1-size display2-md-size lh-2">
+                <h2 class="animate text-grey-800 fw-700 display1-size display2-md-size lh-2">
                   <?= $produk_judul['value1'] ?>
                 </h2>
               <?php endif; ?>
               <?php if ($produk_sub_judul['value2'] == 1) : ?>
-                <p class="fw-300 font-xsss lh-28 text-grey-500">
+                <p class="animate fw-300 font-xsss lh-28 text-grey-500">
                   <?= $produk_sub_judul['value1'] ?>
                 </p>
               <?php endif ?>
             </div>
 
             <div class="col-lg-12">
-              <div class="product-slider owl-carousel owl-theme overflow-visible dot-none right-nav pb-4">
+              <div class="animate product-slider owl-carousel owl-theme overflow-visible dot-none right-nav pb-4">
                 <?php foreach ($produk_items as $item) : ?>
                   <div class="owl-items text-center">
                     <div class="d-md-flex flex-row-reverse justify-content-between width-100">
@@ -264,19 +284,19 @@ function getBg(int $counter): string
           <div class="row">
             <div class="col-lg-6 text-left mb-5 pb-0">
               <?php if ($testimoni_judul['value2'] == 1) : ?>
-                <h2 class="text-grey-800 fw-700 display1-size display2-md-size lh-2">
+                <h2 class="animate text-grey-800 fw-700 display1-size display2-md-size lh-2">
                   <?= $testimoni_judul['value1'] ?>
                 </h2>
               <?php endif; ?>
               <?php if ($testimoni_sub_judul['value2'] == 1) : ?>
-                <p class="fw-300 font-xsss lh-28 text-grey-500">
+                <p class="animate fw-300 font-xsss lh-28 text-grey-500">
                   <?= $testimoni_sub_judul['value1'] ?>
                 </p>
               <?php endif ?>
             </div>
 
             <div class="col-lg-12">
-              <div class="feedback-slider owl-carousel owl-theme overflow-visible dot-none right-nav pb-4">
+              <div class="animate feedback-slider owl-carousel owl-theme overflow-visible dot-none right-nav pb-4">
                 <?php foreach ($testimoni_items as $item) : ?>
                   <div class="owl-items text-center">
                     <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
@@ -312,19 +332,19 @@ function getBg(int $counter): string
           <div class="row">
             <div class="col-lg-6 text-left mb-5 pb-0">
               <?php if ($team_judul['value2'] == 1) : ?>
-                <h2 class="text-grey-800 fw-700 display1-size display2-md-size lh-2">
+                <h2 class="animate text-grey-800 fw-700 display1-size display2-md-size lh-2">
                   <?= $team_judul['value1'] ?>
                 </h2>
               <?php endif; ?>
               <?php if ($team_sub_judul['value2'] == 1) : ?>
-                <p class="fw-300 font-xsss lh-28 text-grey-500">
+                <p class="animate fw-300 font-xsss lh-28 text-grey-500">
                   <?= $team_sub_judul['value1'] ?>
                 </p>
               <?php endif ?>
             </div>
 
             <div class="col-lg-12">
-              <div class="team-slider owl-carousel owl-theme overflow-visible dot-none right-nav pb-4">
+              <div class="animate team-slider owl-carousel owl-theme overflow-visible dot-none right-nav pb-4">
                 <?php foreach ($team_items as $item) : ?>
                   <div class="owl-items text-center p-md-3">
                     <div class="d-flex flex-column justify-content-center text-center">
@@ -362,7 +382,7 @@ function getBg(int $counter): string
 
     <?php if ($kontak_show['value1'] == 1) : ?>
       <div class="section" id="contact">
-        <div id="map" class="rounded-lg overflow-hidden" style="height: 500px;"></div>
+        <div id="map" class="animate rounded-lg overflow-hidden" style="height: 500px;"></div>
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOdKtT5fapH3_OfhV3HFeZjqFs4OfNIew&amp;callback=mapinitialize" type="text/javascript"></script>
         <script type="text/javascript">
           function mapinitialize() {
@@ -693,7 +713,7 @@ function getBg(int $counter): string
       <div class="footer-wrapper my-0 <?php echo getBg($counter);
                                       $counter++ ?>">
         <div class="container">
-          <div class="d-lg-flex flex-row justify-content-between  align-items-end">
+          <div class="animate d-lg-flex flex-row justify-content-between  align-items-end">
             <?php if ($home_logo['value2'] == 1) : ?>
               <div>
                 <a href="">
@@ -702,13 +722,13 @@ function getBg(int $counter): string
               </div>
             <?php endif ?>
             <div>
-              <p class="w-100"><?= $footer_alamat['value1'] ?>
+              <p class="animate w-100"><?= $footer_alamat['value1'] ?>
               </p>
             </div>
             <div>
               <ul class="list-inline">
                 <?php foreach ($footer_sosmed as $sosmed) : ?>
-                  <li class="list-inline-item mr-3"><a href="<?= $sosmed['nama'] ?>" title="<?= $sosmed['nama'] ?>"><i class="<?= $sosmed['icon'] ?> fa-2x"></i></a></li>
+                  <li class="animate list-inline-item mr-3"><a href="<?= $sosmed['nama'] ?>" title="<?= $sosmed['nama'] ?>"><i class="<?= $sosmed['icon'] ?> fa-2x"></i></a></li>
                 <?php endforeach; ?>
                 </li>
               </ul>
@@ -731,7 +751,7 @@ function getBg(int $counter): string
 
 
   <div class="d-flex flex-row-reverse">
-    <a href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>" class="btn btn-success" href="#" style="position:fixed; bottom:16px; right: 16px; z-index:999; padding: 8px; border-radius: 50px;">
+    <a id="fab_wa" href="https://api.whatsapp.com/send?phone=<?= $whatsapp ?>" class="btn btn-success" href="#" style="position:fixed; bottom:16px; right: 16px; z-index:999; padding: 8px; border-radius: 50px;">
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
       </svg>
@@ -746,9 +766,12 @@ function getBg(int $counter): string
     $('a[href*="#"].nav').on('click', function(e) {
       e.preventDefault()
       const destination = $($(this).attr('href')).offset().top;
+
+      let diff = Math.floor($(window).scrollTop() - destination);
+      const duration = Math.abs(diff) / 5;
       $('html, body').animate({
-        scrollTop: destination,
-      }, (destination / 5), 'linear');
+        scrollTop: destination - (diff <= 0 ? 0 : 88.6),
+      }, duration, 'linear');
       document.title = `${this.innerText} | <?= $pengaturan['deskripsi']['value1'] ?>`;
     })
   </script>
@@ -830,7 +853,99 @@ function getBg(int $counter): string
           setLoading(false);
         })
       });
+
+
+      // window.addEventListener("scroll", function(event) {
+      //   // content scrool
+
+      //   if (Math.floor(this.scrollY) > Math.floor($("#home_judul_utama").offset().top)) {
+      //     setTimeout(() => {
+
+      //     }, 500)
+      //   }
+      //   console.clear();
+      //   console.log($("#home_judul_utama").offset().top == this.scrollY);
+      //   console.table({
+      //     x: this.scrollX,
+      //     y: this.scrollY,
+      //     tese: Math.floor($("#home_judul_utama").offset().top),
+      //     tesy: Math.floor(this.scrollY),
+      //   });
+      // }, false);
+
+      var lastScrollTop = 0;
+      $(window).scroll(function() {
+        var st = $(this).scrollTop();
+        var banner = $('.header-wrapper');
+        setTimeout(function() {
+          if (st > lastScrollTop) {
+            banner.addClass('position-absolute');
+            banner.removeClass('bg-dark');
+            banner.removeClass('navHide');
+          } else if (st <= 0) {
+            banner.addClass('position-absolute');
+            banner.removeClass('bg-dark');
+            banner.addClass('navHide');
+            // banner.animate({
+            //   backgroundColor: "rgba(255,255,255,0.7)"
+            // }, 2000);
+
+          } else {
+            banner.removeClass('navHide');
+            banner.removeClass('position-absolute');
+            banner.addClass('bg-dark');
+          }
+          lastScrollTop = st;
+        }, 100);
+
+        // initial
+        $('.animate').each(function() {
+          if (st > ($(this).offset().top - window.screen.height)) {
+            if (this.dataset.use == 0) {
+              this.dataset.use = 1;
+              $(this).addClass(`animate__animated animate__fadeInUp`);
+            }
+          }
+        })
+      });
+
+      // initial
+      $('.animate').each(function() {
+        // animate
+        const animate = $(this).data('animate') ?? 'fadeInUp';
+        if (animate == 0) $(this).attr('data-animate', 'fadeInUp');
+
+        // speed
+        const speed = $(this).data('speed') ?? '';
+        if (speed == 0) $(this).attr('data-speed', '');
+
+        // use
+        const use = $(this).data('use') ?? 0;
+        if (use == 0) $(this).attr('data-use', 0);
+      })
     });
+
+
+
+    const animateCSS = (element, animation, prefix = 'animate__') =>
+      // We create a Promise and return it
+      new Promise((resolve, reject) => {
+        const animationName = `${prefix}${animation}`;
+        const node = document.querySelector(element);
+
+        node.classList.add(`${prefix}animated`, animationName);
+
+        // When the animation ends, we clean the classes and resolve the Promise
+        function handleAnimationEnd(event) {
+          event.stopPropagation();
+          node.classList.remove(`${prefix}animated`, animationName);
+          resolve('Animation ended');
+        }
+
+        node.addEventListener('animationend', handleAnimationEnd, {
+          once: true
+        });
+      });
     $('#coyright').html(`<?= $pengaturan['copyright']['value1'] ?>`);
   </script>
 </body>

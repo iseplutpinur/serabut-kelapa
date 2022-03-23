@@ -13348,11 +13348,11 @@ body:not(.theme-full) .main-content .middle-sidebar-bottom.header-padding {
 	z-index: 5
 }
 
-@media only screen and (max-width:992px) {
+/* @media only screen and (max-width:992px) {
 	.header-wrapper.pos-fixed {
 		position: relative
 	}
-}
+} */
 
 @media only screen and (max-width:768px) {
 	.header-wrapper.pos-fixed .navbar-collapse {

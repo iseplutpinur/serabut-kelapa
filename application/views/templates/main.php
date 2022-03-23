@@ -746,7 +746,6 @@ function getBg(int $counter): string
         </div>
       </div>
     <?php endif; ?>
-
   </div>
 
 
@@ -903,7 +902,9 @@ function getBg(int $counter): string
           if (st > ($(this).offset().top - window.screen.height)) {
             if (this.dataset.use == 0) {
               this.dataset.use = 1;
-              $(this).addClass(`animate__animated animate__fadeInUp`);
+              const speed = this.dataset.speed;
+              console.log(`animate__animated animate__${this.dataset.animate} ${speed == '' ? '' : `animate__${speed}`}`);
+              $(this).addClass(`animate__animated animate__${this.dataset.animate} ${speed == '' ? '' : `animate__${speed}`}`);
             }
           }
         })
@@ -913,11 +914,11 @@ function getBg(int $counter): string
       $('.animate').each(function() {
         // animate
         const animate = $(this).data('animate') ?? 'fadeInUp';
-        if (animate == 0) $(this).attr('data-animate', 'fadeInUp');
+        if (animate == 'fadeInUp') $(this).attr('data-animate', 'fadeInUp');
 
         // speed
         const speed = $(this).data('speed') ?? '';
-        if (speed == 0) $(this).attr('data-speed', '');
+        if (speed == '') $(this).attr('data-speed', '');
 
         // use
         const use = $(this).data('use') ?? 0;

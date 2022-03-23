@@ -9,12 +9,13 @@ $(document).ready(function () {
         if ($('.preloader').length > 0) {
             $('.preloader').delay(200).fadeOut(200);
             $("body").delay(600).addClass('loaded');
-            $(".header-wrapper").addClass('animate__animated animate__fadeInDown animate__faster');
-
-            $("#home_judul_utama").addClass('animate__animated animate__fadeInLeft animate__faster');
-            $("#home_sub_judul").addClass('animate__animated animate__fadeInRight animate__faster');
-            $("#home_btn_title").addClass('animate__animated animate__fadeInUp animate__faster');
-            $("#fab_wa").addClass('animate__animated animate__fadeInUp animate__faster');
+            setTimeout(() => {
+                $(".header-wrapper").addClass('animate__animated animate__fadeInDown animate__faster');
+                $("#home_judul_utama").addClass('animate__animated animate__fadeInLeft animate__faster');
+                $("#home_sub_judul").addClass('animate__animated animate__fadeInRight animate__faster');
+                $("#home_btn_title").addClass('animate__animated animate__fadeInUp animate__faster');
+                $("#fab_wa").addClass('animate__animated animate__fadeInUp animate__faster');
+            }, 600);
         }
     }
 

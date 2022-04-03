@@ -138,8 +138,8 @@ function getBg(int $counter): string
         <div class="container">
           <div class="d-lg-flex flex-row flex-row-reverse justify-content-between">
             <?php if ($about_foto['value2'] == 1) : ?>
-              <div class="mb-4 ml-lg-5">
-                <img src="<?= base_url('files/image/about/') . $about_foto['value1'] ?>" alt="image" data-animate="fadeInRight" class="animate rounded-lg img-fluid shadow-xs">
+              <div class="mb-4 ml-lg-5 pt-lg-5 mt-lg-3">
+                <img src="<?= base_url('files/image/about/') . $about_foto['value1'] ?>" alt="image" data-animate="fadeInRight" class="animate rounded-lg img-fluid">
               </div>
             <?php endif ?>
 
@@ -771,7 +771,7 @@ function getBg(int $counter): string
       $('html, body').animate({
         scrollTop: destination - (diff <= 0 ? 0 : 88.6),
       }, duration, 'linear');
-      document.title = `${this.innerText} | <?= $pengaturan['deskripsi']['value1'] ?>`;
+      document.title = `${this.innerText} | <?= $pengaturan['title']['value2'] ?>`;
     })
   </script>
 

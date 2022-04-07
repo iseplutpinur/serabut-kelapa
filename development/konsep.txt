@@ -50,3 +50,18 @@ Pengaturan
     Nama Aplikasi 1 [bf]
     Favicon 2[bf]
     Icon Aplikasi 1[bf]
+
+
+Catatan Revisi:
+- Fitur [clear]
+- Visi misi  [clear] // ditambah menu di adminitrator
+- About us 
+    B.Inggris [clear]
+    about us
+    - gambar product iconic
+    icon 
+    - border radius
+    - infinity colour
+    home
+    - sub judul ( warna putih ) [clear]
+    - edit Sub Judul Diatas, Judul Dibawah

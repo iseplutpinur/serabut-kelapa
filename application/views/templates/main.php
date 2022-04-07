@@ -70,6 +70,10 @@ function getBg(int $counter): string
                 <li class="nav-item"><a class="nav-link nav" href="#about_us">About Us</a></li>
               <?php endif ?>
 
+              <?php if ($vm_show['value1'] == 1) : ?>
+                <li class="nav-item"><a class="nav-link nav" href="#vm">Vision and Mision</a></li>
+              <?php endif ?>
+
               <?php if ($galeri_show['value1'] == 1) : ?>
                 <li class="nav-item"><a class="nav-link nav" href="#gallery">Gallery</a></li>
               <?php endif ?>
@@ -114,7 +118,7 @@ function getBg(int $counter): string
                 <?php endif ?>
 
                 <?php if ($home_sub_judul['value2'] == 1) : ?>
-                  <h4 id="home_sub_judul" class="fw-500 mb-4 lh-30 font-xsss text-grey-500 mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
+                  <h4 id="home_sub_judul" class="fw-500 mb-4 lh-30 font-xsss text-white mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
                 <?php endif ?>
 
                 <?php if ($home_btn_title['value2'] == 1) : ?>
@@ -157,6 +161,36 @@ function getBg(int $counter): string
       </div><br><br><br>
     <?php endif ?>
 
+    <?php if ($vm_show['value1'] == 1) : ?>
+      <div class="how-to-work pt-5 pb-lg--7 <?php echo getBg($counter);
+                                            $counter++ ?>  " id="vm">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center">
+              <?php if ($vm_judul['value2'] == 1) : ?>
+                <h2 class="animate text-grey-700 fw-700 display1-size display2-md-size pb-3 mb-0 d-block ">
+                  <?= $vm_judul['value1'] ?>
+                </h2>
+              <?php endif ?>
+              <?php if ($vm_sub_judul['value2'] == 1) : ?>
+                <p class="animate fw-300 font-xsss lh-28 text-grey-500">
+                  <?= $vm_sub_judul['value1'] ?>
+                </p>
+              <?php endif ?>
+            </div>
+          </div>
+          <div class="row">
+            <?php if ($vm_visi['value2'] == 1) : ?>
+              <div class="col-md-6 animate"><?= $vm_visi['value1'] ?></div>
+            <?php endif; ?>
+            <?php if ($vm_misi['value2'] == 1) : ?>
+              <div class="col-md-6 animate"><?= $vm_misi['value1'] ?></div>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
+
     <?php if ($galeri_show['value1'] == 1) : ?>
       <div class="how-to-work pt-5 pb-lg--7 <?php echo getBg($counter);
                                             $counter++ ?>  " id="gallery">
@@ -164,7 +198,7 @@ function getBg(int $counter): string
           <div class="row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center">
               <?php if ($galeri_judul['value2'] == 1) : ?>
-                <h2 class="animate text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block ">
+                <h2 class="animate text-grey-700 fw-700 display1-size display2-md-size pb-3 mb-0 d-block ">
                   <?= $galeri_judul['value1'] ?>
                 </h2>
               <?php endif ?>
@@ -198,7 +232,7 @@ function getBg(int $counter): string
           <div class="d-flex flex-row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-3 ">
               <?php if ($feature_judul['value2'] == 1) : ?>
-                <h2 class="animate text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">
+                <h2 class="animate text-grey-700 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">
                   <?= $feature_judul['value1'] ?>
                 </h2>
               <?php endif; ?>
@@ -302,7 +336,7 @@ function getBg(int $counter): string
                     <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
                       <div class="card-body pl-0 pt-0">
                         <img src="<?= base_url('files/image/testimoni/') . $item['foto'] ?>" alt="<?= $item['nama'] ?>" class="w45 float-left mr-3">
-                        <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1"><?= $item['nama'] ?></h4>
+                        <h4 class="text-grey-700 fw-700 font-xsss mt-0 pt-1"><?= $item['nama'] ?></h4>
                         <h5 class="font-xssss fw-500 mb-1 text-grey-500"><?= $item['jabatan'] ?></h5>
                       </div>
                       <p class="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0 "><?= $item['keterangan'] ?></p>
@@ -669,7 +703,7 @@ function getBg(int $counter): string
             <div class="col-lg-10">
               <div class="contact-wrap bg-white shadow-lg rounded-lg position-relative">
                 <?php if ($kontak_judul['value2'] == 1) : ?>
-                  <h1 class="text-grey-900 fw-700 display3-size mb-5 lh-1"><?= $kontak_judul['value1'] ?></h1>
+                  <h1 class="text-grey-700 fw-700 display3-size mb-5 lh-1"><?= $kontak_judul['value1'] ?></h1>
                 <?php endif ?>
                 <div id="alert">
 
@@ -880,14 +914,14 @@ function getBg(int $counter): string
         var banner = $('.header-wrapper');
         setTimeout(function() {
           if (st > lastScrollTop) {
-            banner.addClass('position-absolute');
-            banner.removeClass('bg-dark');
+            banner.fadeOut(250);
             banner.removeClass('navHide');
           } else if (st <= 0) {
             banner.addClass('position-absolute');
             banner.removeClass('bg-dark');
             banner.addClass('navHide');
           } else {
+            banner.fadeIn(250);
             banner.removeClass('navHide');
             banner.removeClass('position-absolute');
             banner.addClass('bg-dark');

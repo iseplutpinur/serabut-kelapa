@@ -91,6 +91,14 @@ class Render_Controller extends CI_Controller
 	protected $key_pengaturan_title = 'pengaturan_title';
 	protected $key_pengaturan_deskripsi = 'pengaturan_deskripsi';
 	protected $key_pengaturan_icon = 'pengaturan_icon';
+
+	// == vm
+	protected $key_vm_show = 'vm_show';
+	protected $key_vm_judul = 'vm_judul';
+	protected $key_vm_sub_judul = 'vm_sub_judul';
+	protected $key_vm_visi = 'vm_visi';
+	protected $key_vm_misi = 'vm_misi';
+
 	// key value =========================================================================================================
 	protected function preRender()
 	{

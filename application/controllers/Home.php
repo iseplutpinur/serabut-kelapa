@@ -82,6 +82,15 @@ class Home extends Render_Controller
 			$this->data['home_logo'] = $this->key_get($this->key_home_logo);
 		}
 
+		// == Visi Misi
+		$this->data['vm_show'] = $this->key_get($this->key_vm_show);
+		if ($this->data['vm_show']['value1'] == 1) {
+			$this->data['vm_judul'] = $this->key_get($this->key_vm_judul);
+			$this->data['vm_sub_judul'] = $this->key_get($this->key_vm_sub_judul);
+			$this->data['vm_visi'] = $this->key_get($this->key_vm_visi);
+			$this->data['vm_misi'] = $this->key_get($this->key_vm_misi);
+		}
+
 		$this->data['whatsapp'] = $this->model->getNoWhatsapp();
 
 		$this->content = 'front/home';

@@ -11,13 +11,13 @@ class Pengaturan extends Render_Controller
 
         // Page Settings
         $this->title = 'Pengaturan';
-        $this->navigation = ['Home'];
+        $this->navigation = ['Aplikasi'];
         $this->title_show = false;
         $this->breadcrumb_show = false;
         $this->plugins = ['icheck'];
 
         // Breadcrumb setting
-        $this->breadcrumb_1 = 'Home';
+        $this->breadcrumb_1 = 'Aplikasi';
         $this->breadcrumb_1_url = base_url() . 'admin/pengaturan';
         $this->breadcrumb_3 = 'Pengaturan';
         $this->breadcrumb_3_url = '#';

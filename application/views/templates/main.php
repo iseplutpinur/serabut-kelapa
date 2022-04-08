@@ -118,7 +118,7 @@ function getBg(int $counter): string
                 <?php endif ?>
 
                 <?php if ($home_judul_utama['value2'] == 1) : ?>
-                  <h4 id="home_judul_utama" class="fw-700 text-white display4-size display4-lg-size display4-md-size lh-1 mb-0 os-init mt-5 " data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"><?= $home_judul_utama['value1'] ?></h4>
+                  <h4 id="home_judul_utama" class="fw-700 text-white display4-size display4-lg-size display4-md-size lh-1 mb-0 os-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"><?= $home_judul_utama['value1'] ?></h4>
                 <?php endif ?>
 
                 <?php if ($home_btn_title['value2'] == 1) : ?>

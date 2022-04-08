@@ -113,12 +113,12 @@ function getBg(int $counter): string
           <div class="row">
             <div class="col-xl-6 col-lg-6 vh-lg--100 align-items-center d-flex sm-mt-7">
               <div class="card w-100 border-0 bg-transparent d-block sm-mb-5 sm-mt-3">
-                <?php if ($home_judul_utama['value2'] == 1) : ?>
-                  <h4 id="home_judul_utama" class="fw-700 text-white display4-size display4-lg-size display4-md-size lh-1 mb-0 os-init mt-5 " data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"><?= $home_judul_utama['value1'] ?></h4>
-                <?php endif ?>
-
                 <?php if ($home_sub_judul['value2'] == 1) : ?>
                   <h4 id="home_sub_judul" class="fw-500 mb-4 lh-30 font-xsss text-white mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
+                <?php endif ?>
+
+                <?php if ($home_judul_utama['value2'] == 1) : ?>
+                  <h4 id="home_judul_utama" class="fw-700 text-white display4-size display4-lg-size display4-md-size lh-1 mb-0 os-init mt-5 " data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"><?= $home_judul_utama['value1'] ?></h4>
                 <?php endif ?>
 
                 <?php if ($home_btn_title['value2'] == 1) : ?>
@@ -128,8 +128,6 @@ function getBg(int $counter): string
                 <?php endif ?>
 
               </div>
-            </div>
-            <div class="col-lg-6 align-items-center d-flex vh-lg--100 ">
             </div>
           </div>
         </div>
@@ -965,6 +963,9 @@ function getBg(int $counter): string
         if (use == 0) $(this).attr('data-use', 0);
       })
       handelWindowScoll();
+      setTimeout(() => {
+        $('.header-wrapper').fadeIn();
+      }, 200);
     });
 
 

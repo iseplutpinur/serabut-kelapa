@@ -71,7 +71,7 @@ function getBg(int $counter): string
               <?php endif ?>
 
               <?php if ($vm_show['value1'] == 1) : ?>
-                <li class="nav-item"><a class="nav-link nav" href="#vm">Vision and Mision</a></li>
+                <li class="nav-item"><a class="nav-link nav" href="#vm">Feature</a></li>
               <?php endif ?>
 
               <?php if ($galeri_show['value1'] == 1) : ?>
@@ -114,7 +114,7 @@ function getBg(int $counter): string
             <div class="col-xl-6 col-lg-6 vh-lg--100 align-items-center d-flex sm-mt-7">
               <div class="card w-100 border-0 bg-transparent d-block sm-mb-5 sm-mt-3">
                 <?php if ($home_sub_judul['value2'] == 1) : ?>
-                  <h4 id="home_sub_judul" class="fw-500 mb-4 lh-30 font-xsss text-white mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
+                  <h4 id="home_sub_judul" class="fw-700 mb-4 lh-30 font-xs text-white mt-3 os-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400"><?= $home_sub_judul['value1'] ?></h4>
                 <?php endif ?>
 
                 <?php if ($home_judul_utama['value2'] == 1) : ?>
@@ -140,7 +140,7 @@ function getBg(int $counter): string
         <div class="container">
           <div class="d-lg-flex flex-row flex-row-reverse justify-content-between">
             <?php if ($about_foto['value2'] == 1) : ?>
-              <div class="mb-4 ml-lg-5 pt-lg-5 mt-lg-3">
+              <div class="mb-4 ml-lg-4">
                 <img src="<?= base_url('files/image/about/') . $about_foto['value1'] ?>" alt="image" data-animate="fadeInRight" class="animate rounded-lg img-fluid">
               </div>
             <?php endif ?>

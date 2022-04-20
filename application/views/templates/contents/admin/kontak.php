@@ -12,41 +12,26 @@
   <!-- /.card-header -->
   <div class="card-body">
     <form id="fmain" enctype="multipart/form-data">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="icheck-primary">
-            <input type="checkbox" id="show_judul" name="show_judul" <?= in_array($judul['value2'], ['0', null]) ? '' : 'checked' ?>>
-            <label for="show_judul">
-              Tampilkan Judul
-            </label>
-          </div>
-          <div class="form-group">
-            <label for="main_judul">Judul</label>
-            <input type="text" class="form-control" id="main_judul" name="main_judul" placeholder="Judul" required value="<?= $judul['value1'] ?>" />
-          </div>
-
-        </div>
-        <div class="col-md-6">
-          <Label>Koordinat Google Maps</Label>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="latitiude">Latitude</label>
-                <input type="text" class="form-control" id="latitiude" name="latitiude" placeholder="Judul" required value="<?= $koordinat['value1'] ?>" />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="logtitude">Longitude</label>
-                <input type="text" class="form-control" id="logtitude" name="logtitude" placeholder="Judul" required value="<?= $koordinat['value2'] ?>" />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="form-group">
+        <label for="main_judul">Judul</label>
+        <input type="text" class="form-control" id="main_judul" name="main_judul" placeholder="Judul" required value="<?= $judul['value1'] ?>" />
       </div>
-
-
-
+      <div class="icheck-primary">
+        <input type="checkbox" id="show_judul" name="show_judul" <?= in_array($judul['value2'], ['0', null]) ? '' : 'checked' ?>>
+        <label for="show_judul">
+          Tampilkan Judul
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="main_sub_judul">Sub Judul</label>
+        <input type="text" class="form-control" id="main_sub_judul" name="main_sub_judul" placeholder="Sub Judul" required value="<?= $sub_judul['value1'] ?>" />
+      </div>
+      <div class="icheck-primary">
+        <input type="checkbox" id="show_sub_judul" name="show_sub_judul" <?= in_array($sub_judul['value2'], ['0', null]) ? '' : 'checked' ?>>
+        <label for="show_sub_judul">
+          Tampilkan Sub Judul
+        </label>
+      </div>
     </form>
   </div>
   <div class="card-footer">
@@ -66,9 +51,11 @@
       <thead>
         <tr>
           <th>No</th>
-          <th>Nama</th>
+          <th>First Name</th>
+          <th>First Name</th>
+          <th>Subject</th>
           <th>Email</th>
-          <th>Pesan</th>
+          <th>Message</th>
           <th>Aksi</th>
         </tr>
       </thead>

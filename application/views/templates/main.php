@@ -414,327 +414,71 @@ function getBg(int $counter): string
 
     <?php if ($kontak_show['value1'] == 1) : ?>
       <div class="section" id="contact">
-        <div id="map" class="animate rounded-lg overflow-hidden" style="height: 500px;"></div>
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOdKtT5fapH3_OfhV3HFeZjqFs4OfNIew&amp;callback=mapinitialize" type="text/javascript"></script>
-        <script type="text/javascript">
-          function mapinitialize() {
-            var latlng = new google.maps.LatLng(<?= $kontak_koordinat['value1'] ?>, <?= $kontak_koordinat['value2'] ?>);
-            var myOptions = {
-              zoom: 16,
-              center: latlng,
-              scrollwheel: false,
-              scaleControl: false,
-              disableDefaultUI: false,
-              mapTypeId: google.maps.MapTypeId.ROADMAP,
-              // Google Map Color Styles
-              styles: [{
-                "featureType": "all",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "on"
-                }]
-              }, {
-                "featureType": "administrative",
-                "elementType": "labels.text.fill",
-                "stylers": [{
-                  "color": "#444444"
-                }]
-              }, {
-                "featureType": "administrative.province",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "administrative.locality",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "administrative.neighborhood",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "administrative.land_parcel",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "administrative.land_parcel",
-                "elementType": "labels.text",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "landscape",
-                "elementType": "all",
-                "stylers": [{
-                  "color": "#f2f2f2"
-                }]
-              }, {
-                "featureType": "landscape.man_made",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "simplified"
-                }]
-              }, {
-                "featureType": "poi",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "off"
-                }, {
-                  "color": "#cee9de"
-                }, {
-                  "saturation": "2"
-                }, {
-                  "weight": "0.80"
-                }]
-              }, {
-                "featureType": "poi.attraction",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "poi.park",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "on"
-                }]
-              }, {
-                "featureType": "road",
-                "elementType": "all",
-                "stylers": [{
-                  "saturation": -100
-                }, {
-                  "lightness": 45
-                }]
-              }, {
-                "featureType": "road.highway",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "simplified"
-                }]
-              }, {
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                  "visibility": "on"
-                }, {
-                  "color": "#f5d6d6"
-                }]
-              }, {
-                "featureType": "road.highway",
-                "elementType": "labels.text",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "road.highway",
-                "elementType": "labels.icon",
-                "stylers": [{
-                  "hue": "#ff0000"
-                }, {
-                  "visibility": "on"
-                }]
-              }, {
-                "featureType": "road.highway.controlled_access",
-                "elementType": "labels.text",
-                "stylers": [{
-                  "visibility": "simplified"
-                }]
-              }, {
-                "featureType": "road.highway.controlled_access",
-                "elementType": "labels.icon",
-                "stylers": [{
-                  "visibility": "on"
-                }, {
-                  "hue": "#0064ff"
-                }, {
-                  "gamma": "1.44"
-                }, {
-                  "lightness": "-3"
-                }, {
-                  "weight": "1.69"
-                }]
-              }, {
-                "featureType": "road.arterial",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "on"
-                }]
-              }, {
-                "featureType": "road.arterial",
-                "elementType": "labels.text",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "road.arterial",
-                "elementType": "labels.icon",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "road.local",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "on"
-                }]
-              }, {
-                "featureType": "road.local",
-                "elementType": "labels.text",
-                "stylers": [{
-                  "visibility": "simplified"
-                }, {
-                  "weight": "0.31"
-                }, {
-                  "gamma": "1.43"
-                }, {
-                  "lightness": "-5"
-                }, {
-                  "saturation": "-22"
-                }]
-              }, {
-                "featureType": "transit",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              }, {
-                "featureType": "transit.line",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "on"
-                }, {
-                  "hue": "#ff0000"
-                }]
-              }, {
-                "featureType": "transit.station.airport",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "simplified"
-                }, {
-                  "hue": "#ff0045"
-                }]
-              }, {
-                "featureType": "transit.station.bus",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "on"
-                }, {
-                  "hue": "#00d1ff"
-                }]
-              }, {
-                "featureType": "transit.station.bus",
-                "elementType": "labels.text",
-                "stylers": [{
-                  "visibility": "simplified"
-                }]
-              }, {
-                "featureType": "transit.station.rail",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "simplified"
-                }, {
-                  "hue": "#00cbff"
-                }]
-              }, {
-                "featureType": "transit.station.rail",
-                "elementType": "labels.text",
-                "stylers": [{
-                  "visibility": "simplified"
-                }]
-              }, {
-                "featureType": "water",
-                "elementType": "all",
-                "stylers": [{
-                  "color": "#46bcec"
-                }, {
-                  "visibility": "on"
-                }]
-              }, {
-                "featureType": "water",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                  "weight": "1.61"
-                }, {
-                  "color": "#cde2e5"
-                }, {
-                  "visibility": "on"
-                }]
-              }]
-            };
-            var map = new google.maps.Map(document.getElementById("map"), myOptions);
+        <div class="how-to-work pt-5 pb-lg--7 <?php echo getBg($counter);
+                                              $counter++ ?>  " id="gallery">
+          <div class="container">
+            <div class="page-title style1">
+              <?php if ($kontak_judul['value2'] == 1) : ?>
+                <h2 class="animate text-grey-700 fw-700 display1-size display2-md-size pb-3 mb-0 d-block  animate">
+                  <?= $kontak_judul['value1'] ?>
+                </h2>
+              <?php endif ?>
+              <?php if ($kontak_sub_judul['value2'] == 1) : ?>
+                <p class="animate fw-300 font-xsss lh-28 text-grey-500   animate">
+                  <?= $kontak_sub_judul['value1'] ?>
+                </p>
+              <?php endif ?>
+            </div>
 
-            var image = "<?= base_url() ?>assets/template/front/images/map-marker.png";
-            var image = new google.maps.MarkerImage("<?= base_url() ?>assets/template/front/images/map-marker.png", null, null, null, new google.maps.Size(50, 50));
-            var marker = new google.maps.Marker({
-              map: map,
-              icon: image,
-              position: map.getCenter()
-            });
+            <div id="alert">
 
-            var contentString = '<b>Office</b><br>Streetname 13<br>50001 Sydney';
-            var infowindow = new google.maps.InfoWindow({
-              content: contentString
-            });
-
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.open(map, marker);
-            });
-
-
-          }
-          mapinitialize();
-        </script>
-      </div>
-
-      <div class="map-wrapper  <?php echo getBg($counter);
-                                $counter++ ?>">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="contact-wrap bg-white shadow-lg rounded-lg position-relative">
-                <?php if ($kontak_judul['value2'] == 1) : ?>
-                  <h1 class="text-grey-700 fw-700 display3-size mb-5 lh-1"><?= $kontak_judul['value1'] ?></h1>
-                <?php endif ?>
-                <div id="alert">
-
-                </div>
-                <form action="#" id="fpesan">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                      <div class="form-group mb-3">
-                        <input type="text" class="form-control style2-input bg-color-none " name="nama" placeholder="Nama">
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                      <div class="form-group mb-3">
-                        <input type="email" class="form-control style2-input bg-color-none " name="email" placeholder="Email">
-                      </div>
-                    </div>
-
-                    <div class="col-12">
-                      <div class="form-group mb-3 md-mb-2">
-                        <textarea class="w-100 h125 style2-textarea p-3 form-control" name="pesan" placeholder="Pesan"></textarea>
-                      </div>
-
+            </div>
+            <form action="#" id="fpesan">
+              <div class="row">
+                <div class="col-12 animate">
+                  <label for="name">Name <span class="small">*</span></label>
+                  <div class="row mb-3">
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <button type="submit" class="rounded-lg style1-input bg-current text-white text-center font-xss fw-500 border-2 border-0 p-0 w175">
-                          Submit
-                        </button>
+                        <input type="text" class="form-control style2-input bg-color-none" name="first_name" required placeholder="First Name">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control style2-input bg-color-none" name="last_name" placeholder="Last Name">
                       </div>
                     </div>
                   </div>
+                </div>
 
-                </form>
+                <div class="col-12 animate">
+                  <div class="form-group mb-3">
+                    <label for="subject">Subject <span class="small">*</span></label>
+                    <input type="text" class="form-control style2-input bg-color-none " name="subject" required placeholder="Subject">
+                  </div>
+                </div>
+
+                <div class="col-12 animate">
+                  <div class="form-group mb-3">
+                    <label for="email">Email <span class="small">*</span></label>
+                    <input type="email" class="form-control style2-input bg-color-none " name="email" required placeholder="Email Address">
+                  </div>
+                </div>
+
+                <div class="col-12  animate">
+                  <div class="form-group mb-3 md-mb-2">
+                    <label for="subject">Message <span class="small">*</span></label>
+                    <textarea class="w-100 h125 style2-textarea p-3 form-control" name="message" required placeholder="Message"></textarea>
+                  </div>
+
+                  <div class="form-group  animate">
+                    <button type="submit" class="btn btn-dark btn-lg font-xss fw-500 rounded-pill px-5">
+                      Submit
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -818,7 +562,9 @@ function getBg(int $counter): string
     $(document).ready(() => {
       function setLoading(loading) {
         const btn = $('button[type=submit]');
-        const nama = $('[name=nama]');
+        const first_name = $('[name=first_name]');
+        const last_name = $('[name=last_name]');
+        const subject = $('[name=subject]');
         const email = $('[name=email]');
         const pesan = $('[name=pesan]');
         if (loading) {
@@ -826,13 +572,17 @@ function getBg(int $counter): string
           btn.html(`<div class="spinner-border" style="width: 1.3rem;height: 1.3rem;margin-right: 8px;" role="status">
                           <span class="sr-only">Loading...</span>
                         </div> Submit`);
-          nama.attr('disabled', '');
+          first_name.attr('disabled', '');
+          last_name.attr('disabled', '');
+          subject.attr('disabled', '');
           email.attr('disabled', '');
           pesan.attr('disabled', '');
         } else {
           btn.removeAttr('disabled');
           btn.html('Submit');
-          nama.removeAttr('disabled');
+          first_name.removeAttr('disabled');
+          last_name.removeAttr('disabled');
+          subject.removeAttr('disabled');
           email.removeAttr('disabled');
           pesan.removeAttr('disabled');
         }
@@ -851,13 +601,11 @@ function getBg(int $counter): string
           contentType: false,
           processData: false,
         }).done((data) => {
-          $('[name=nama]').val('');
-          $('[name=email]').val('');
-          $('[name=pesan]').val('');
+          document.getElementById("fpesan").reset();
           $('#alert').html(`
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                   <div id="contact_alert_body">
-                    <strong>Berhasil</strong>. Pesan berhasil disimpan.
+                    <strong>Succeed</strong>. Message saved successfully.
                   </div>
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -869,7 +617,7 @@ function getBg(int $counter): string
             $('#alert').html(`
                   <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     <div id="contact_alert_body">
-                      <strong>Gagal</strong>. Pesan gagal disimpan.
+                      <strong>Failed</strong>. Message failed to save.
                       <ul>
                         ${String($xhr.responseJSON.message)}
                       </ul>

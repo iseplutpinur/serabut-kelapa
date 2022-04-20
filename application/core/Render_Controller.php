@@ -79,6 +79,7 @@ class Render_Controller extends CI_Controller
 
 	// == kontak
 	protected $key_kontak_judul = 'kontak_judul';
+	protected $key_kontak_sub_judul = 'kontak_sub_judul';
 	protected $key_kontak_show = 'kontak_show';
 	protected $key_kontak_koordinat = 'kontak_koordinat';
 

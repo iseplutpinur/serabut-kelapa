@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2022 at 01:39 AM
+-- Generation Time: Apr 21, 2022 at 01:31 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.28
+-- PHP Version: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -131,13 +131,13 @@ CREATE TABLE `key_value` (
 INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
 ('about', 'Tentang Kami', '                        <h3 class=\"section-title-3 pb-0\">Athena Florist</h3>\r\n                        <p>Athena Florist Bandung merupakan perusahaan yang bergerak dibidang penjualan bunga papan, berdiri sejak 2018 di Bandung.\r\n                            Perusahaan ini didirikan oleh keluarga saya pada tanggal 15 januari 2018.\r\n                            athena florist bandung - merupakan layanan toko karangan bunga online yang telah berpengalaman dan terpercaya melayani berbagai jenis rangkaiian bunga yang menarik, elegan, dan kreatif dalam segi rangkaiian yang di hasilkan. kami berpusat di kota bandung siap melayani anda 24 jam dengan senang hati, beragam jenis karangan/rangkaian bunga papan ucapan seperti Anniversry, Congratulation, duka cita, Happy Wedding, dan even even tertentu seperti Valentine, acara kantor, dll</p>', 1, 1, NULL, '2021-11-26 03:39:47', '2021-11-26 03:56:13', NULL),
 ('about_detail', '<p><span style=\"font-size: 14px;\">Recognizing Indonesia\'s potential as one of the world\'s leading coconut producers, we will finally start exporting coconut derivatives such as coconut and coconut coir starting in 2021. Providing service to customers is a success for us, because we think the best corporate culture is \"the one that gives more\".</span></p><p><span style=\"font-size: 14px;\">We want to inspire the world by demonstrating that it is possible to simultaneously provide long-term and sustainable happiness & well-being for customers, employees, suppliers, shareholders, and communities in the long and sustainable term.</span></p>\r\n<p style=\"text-align: left;\"><br></p><p></p>', '1', 1, 1, NULL, '2022-03-11 02:35:49', '2022-04-08 05:03:14', NULL),
-('about_foto', 'b1f322dbbed952c183357f0fdab19249.png', '1', 1, 1, NULL, '2021-11-26 03:39:47', '2022-04-08 05:04:23', NULL),
+('about_foto', 'b24a6794a507c0524af91a8efb7a0e64.png', '1', 1, 1, NULL, '2021-11-26 03:39:47', '2022-04-21 05:00:37', NULL),
 ('about_history', 'A little story about us', '<h2 class=\"section-title-large\">Our History</h2>\r\n                        <p><strong>Sejarah adanya bunga papan ucapan Bandung</strong></p>\r\n                        <p>bunga papan ini biasanya dikirimkan oleh seseorang ataupun perusahaan ketika dalam suatu acara ataupun momen tertentu, seperti misalnya acara pernikahan, peresmian, duka cita atau bahkan perayaan ulang tahun seseorang yang dianggap penting atau spesial. Anggapan kita terhadap sebuah acara atau seseorang yang banyak dikirimi karangan bunga papan maka ia adalah orang penting yang mempunyai banyak pengaruh untuk kalangan orang banyak. Biasanya semakin besar suatu acara yang diadakan maka akan semakin banyak pula kiriman karangan bunga papannya</p>\r\n                   ', 1, 1, NULL, '2021-11-26 03:38:13', '2021-11-26 03:59:15', NULL),
 ('about_judul', 'ABOUT US', '1', 1, 1, NULL, '2022-03-11 02:35:49', '2022-03-12 19:18:03', NULL),
 ('about_show', '1', NULL, 1, 1, NULL, '2022-03-11 02:35:49', '2022-03-13 00:40:04', NULL),
 ('contact_maps', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6134744797523!2d107.60127411431729!3d-6.936714169829251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9a18575daed%3A0x9c362e4a9bbfa5a7!2sToko%20Bunga%20papan%20ucapan%20Bandung%20-%20Athena%20Florist!5e0!3m2!1sid!2sid!4v1637587340767!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>', NULL, 1, 1, NULL, '2021-11-26 07:27:55', '2021-11-26 07:36:32', NULL),
 ('feature_judul', 'Feature', '1', 1, 1, NULL, '2022-03-11 13:32:42', '2022-04-08 06:30:03', NULL),
-('feature_show', '1', NULL, 1, 1, NULL, '2022-03-11 13:32:42', '2022-03-13 00:40:23', NULL),
+('feature_show', '0', NULL, 1, 1, NULL, '2022-03-11 13:32:42', '2022-04-08 12:45:26', NULL),
 ('feature_sub_judul', '-', '1', 1, 1, NULL, '2022-03-11 13:32:42', '2022-03-12 21:40:09', NULL),
 ('footer_alamat', '41 madison ave, floor 24 new work, NY 10010 1-877-932-7111, support@mail.com', '1', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 21:40:20', NULL),
 ('footer_contact', 'Info Kontak', '<p>                </p><address><span style=\"color: rgb(72, 72, 72); font-family: Poppins, sans-serif; font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);\">Toko bunga papan ucapan Bandung - Pasar Bunga tegalega, Bandung</span><br>Phone: <span style=\"color: rgb(72, 72, 72); font-family: Poppins, sans-serif; font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);\">081903902070</span><br>Email: athenafloristbandung@gmail.com</address>https://tokobungapapanucapanbandung.com<address><br></address><p></p>', 1, 1, NULL, '2021-11-19 17:52:48', '2022-03-10 23:10:04', NULL),
@@ -151,14 +151,15 @@ INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, 
 ('home_btn_link', 'http://facebook.com', NULL, 1, 1, NULL, '2022-03-11 14:06:59', '2022-03-12 18:40:57', NULL),
 ('home_btn_title', '<svg                                     xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\"                                     class=\"bi bi-whatsapp\" viewBox=\"0 0 16 16\">                                     <path                                         d=\"M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z\" />                                 </svg> Pesan Sekarang', '0', 1, 1, NULL, '2022-03-11 00:53:11', '2022-03-13 00:45:22', NULL),
 ('home_foto_jumbotron', '39902fe1e0a1deba38e9972252d63088.png', '1', 1, 1, NULL, '2022-03-11 00:53:11', '2022-04-02 22:26:18', NULL),
-('home_judul_utama', 'PENYUPLAI KELAPA TERBAIK UNTUK DUNIA', '1', 1, 1, NULL, '2022-03-11 00:53:11', '2022-04-05 22:07:08', NULL),
-('home_logo', '981f24cbeaba3c9128a9aff72653e7cb.png', '1', 1, 1, NULL, '2022-03-11 00:53:11', '2022-04-02 23:30:05', NULL),
+('home_judul_utama', 'BEST COCONUT SUPPLIER TO THE WORLD', '1', 1, 1, NULL, '2022-03-11 00:53:11', '2022-04-08 14:18:17', NULL),
+('home_logo', 'e39f438a91dab9b07580fee2a7c3a8d0.png', '1', 1, 1, NULL, '2022-03-11 00:53:11', '2022-04-08 13:52:10', NULL),
 ('home_show', '1', NULL, 1, 1, NULL, '2022-03-11 01:42:01', '2022-03-13 00:39:53', NULL),
 ('home_situs', NULL, NULL, 1, NULL, NULL, '2022-03-11 13:52:01', NULL, NULL),
-('home_sub_judul', 'supplier produk kelapa', '1', 1, 1, NULL, '2022-03-11 00:53:11', '2022-04-05 22:08:18', NULL),
-('kontak_judul', 'Contact Us', '1', 1, 1, NULL, '2022-03-12 11:39:30', '2022-03-12 18:03:54', NULL),
+('home_sub_judul', 'coconut product supplier', '1', 1, 1, NULL, '2022-03-11 00:53:11', '2022-04-08 14:18:17', NULL),
+('kontak_judul', 'WHAT CAN WE DO FOR YOU', '1', 1, 1, NULL, '2022-03-12 11:39:30', '2022-04-21 06:29:40', NULL),
 ('kontak_koordinat', '-6.896598', '107.630872', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 11:51:55', NULL),
-('kontak_show', '0', NULL, 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-12 18:45:22', NULL),
+('kontak_show', '1', NULL, 1, 1, NULL, '2022-03-11 13:52:01', '2022-04-21 05:02:31', NULL),
+('kontak_sub_judul', 'PLEASE TELL US WHAT IS YOUR REQUIRMENT IN DETAILS', '1', 1, 1, NULL, '2022-04-21 06:28:24', '2022-04-21 06:29:40', NULL),
 ('kontak_tampilan_depan', NULL, NULL, 1, NULL, NULL, '2022-03-11 13:52:01', NULL, NULL),
 ('logo', 'd481abc4593064169dbcee9de39c804a.png', '4707ee8ba9fff6de51d74efbe5a35ee7.png', 1, 1, NULL, '2021-11-19 15:15:03', '2022-01-22 13:06:40', NULL),
 ('offer', 'Terlengkap Dan Terjangkau', 'Toko Bunga Ucapan Bandung', 1, 1, NULL, '2021-11-17 21:17:10', '2021-11-17 21:55:55', NULL),
@@ -180,11 +181,11 @@ INSERT INTO `key_value` (`key`, `value1`, `value2`, `created_by`, `updated_by`, 
 ('testimoni_judul', 'Testimoni', 'on', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-11 17:45:33', NULL),
 ('testimoni_show', 'on', NULL, 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-11 17:45:33', NULL),
 ('testimoni_sub_judul', '-', '0', 1, 1, NULL, '2022-03-11 13:52:01', '2022-03-11 17:45:33', NULL),
-('vm_judul', 'VISION AND MISSION', '1', 1, 1, NULL, '2022-04-08 06:13:41', '2022-04-08 06:15:36', NULL),
-('vm_misi', '<p style=\"text-align: center; \"><span style=\"font-weight: bolder; font-size: 24px;\">Mision</span><br></p><p style=\"text-align: center; \">1. Menjaga produksi produk-produk agar kualitas dan kuantitasnya sesuai dengan tuntutan konsumen</p><p style=\"text-align: center;\">2. Memperdayakan para petani yang ada diseluruh penjuru indonesia&nbsp;</p><p style=\"text-align: center;\">3. Meningkatkan promosi produk melalui media online maupun dengan media promosi lain</p>', '1', 1, 1, NULL, '2022-04-08 06:13:41', '2022-04-08 06:26:55', NULL),
+('vm_judul', 'VISION AND MISSION', '1', 1, 1, NULL, '2022-04-08 06:13:41', '2022-04-08 12:47:01', NULL),
+('vm_misi', '<p style=\"text-align: center; \"><span style=\"font-weight: bolder; font-size: 24px;\">Mission</span><br></p><p style=\"text-align: center; \">1. Maintain the production of products so that the quality and quantity are in accordance with consumer demands</p><p style=\"text-align: center; \">2. Empowering farmers throughout Indonesia</p><p style=\"text-align: center; \">3. Increase product promotion through online media and other promotional media</p>', '1', 1, 1, NULL, '2022-04-08 06:13:41', '2022-04-08 14:55:54', NULL),
 ('vm_show', '1', NULL, 1, 1, NULL, '2022-04-08 06:13:41', '2022-04-08 06:16:24', NULL),
 ('vm_sub_judul', '', '1', 1, 1, NULL, '2022-04-08 06:13:41', '2022-04-08 06:15:36', NULL),
-('vm_visi', '<p style=\"text-align: center; \"><span style=\"font-size: 24px;\"><b>Vision</b></span></p><p style=\"text-align: center; \">- Menjadi pemasok produk turunan kelapa berkulitas</p><p style=\"text-align: center;\">- Menjadi salah satu produsen kelapa terbesar di indonesia</p><p style=\"text-align: center;\">- Menjadikan produk kami mampu bersaing dengan produk lain di pasar internasional</p>', '1', 1, 1, NULL, '2022-04-08 06:13:41', '2022-04-08 06:26:55', NULL);
+('vm_visi', '<p style=\"text-align: center; \"><span style=\"font-size: 24px;\"><b>Vision</b></span></p><p style=\"text-align: center; \">- Become a supplier of quality coconut derivative products</p><p style=\"text-align: center; \">- Become one of the largest coconut producers in Indonesia</p><p style=\"text-align: center; \">- Making our products able to compete with other products in the international market</p>', '1', 1, 1, NULL, '2022-04-08 06:13:41', '2022-04-08 14:19:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -230,7 +231,7 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`menu_id`, `menu_menu_id`, `menu_nama`, `menu_keterangan`, `menu_index`, `menu_icon`, `menu_url`, `menu_status`, `created_at`) VALUES
-(2, 0, 'Pengaturan', '-', 11, 'fa fa-cogs', '#', 'Aktif', '2020-06-18 02:40:07'),
+(2, 0, 'Pengaturan', '-', 12, 'fa fa-cogs', '#', 'Aktif', '2020-06-18 02:40:07'),
 (4, 2, 'Menu', '-', 6, 'far fa-circle', 'pengaturan/menu', 'Aktif', '2020-06-18 02:40:07'),
 (5, 2, 'Level', '-', 4, 'far fa-circle', 'pengaturan/level', 'Aktif', '2020-06-18 02:40:07'),
 (6, 2, 'Pengguna', '-', 2, 'far fa-circle', 'pengaturan/pengguna', 'Aktif', '2020-06-18 02:40:07'),
@@ -245,7 +246,8 @@ INSERT INTO `menu` (`menu_id`, `menu_menu_id`, `menu_nama`, `menu_keterangan`, `
 (138, 0, 'Kontak', '-', 8, 'fas fa-phone', 'admin/kontak', 'Aktif', '2022-03-10 15:17:30'),
 (139, 0, 'Footer', '-', 9, 'far fa-file', 'admin/footer', 'Aktif', '2022-03-10 15:18:39'),
 (140, 2, 'Aplikasi', '-', 0, 'far fa-circle', 'admin/pengaturan', 'Aktif', '2022-03-12 09:28:34'),
-(141, 0, 'Visi dan Misi', '-', 10, 'fas fa-bullseye', 'admin/VisiMisi', 'Aktif', '2022-04-07 22:53:33');
+(141, 0, 'Visi dan Misi', '-', 10, 'fas fa-bullseye', 'admin/VisiMisi', 'Aktif', '2022-04-07 22:53:33'),
+(142, 0, 'Produk', '-', 11, 'fas fa-store', 'admin/Produk', 'Aktif', '2022-04-08 07:22:33');
 
 -- --------------------------------------------------------
 
@@ -255,9 +257,11 @@ INSERT INTO `menu` (`menu_id`, `menu_menu_id`, `menu_nama`, `menu_keterangan`, `
 
 CREATE TABLE `pesan_masuk` (
   `id` int(11) NOT NULL,
-  `nama` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `pesan` text DEFAULT NULL,
+  `message` text DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -266,8 +270,10 @@ CREATE TABLE `pesan_masuk` (
 -- Dumping data for table `pesan_masuk`
 --
 
-INSERT INTO `pesan_masuk` (`id`, `nama`, `email`, `pesan`, `created_by`, `created_at`) VALUES
-(4, 'Isep Lutpi Nur', 'sales@gmail.com', 'Pesan', NULL, '2022-03-12 10:05:40');
+INSERT INTO `pesan_masuk` (`id`, `first_name`, `last_name`, `subject`, `email`, `message`, `created_by`, `created_at`) VALUES
+(13, 'Isep Lutpi', 'Nur', 'Testing', 'super@admin.com', 'Tes messages', NULL, '2022-04-21 06:15:03'),
+(14, 'dgsgsdfg', 'sdafsadf', 'Susdfadsf', 'Email@gmail.com', 'asdfasfd', NULL, '2022-04-21 06:19:02'),
+(15, 'sadfsdaf', '', 'asdfasfd', 'safsadf.co@gm.f', 'sdfaasdf', NULL, '2022-04-21 06:19:27');
 
 -- --------------------------------------------------------
 
@@ -296,8 +302,8 @@ CREATE TABLE `produk` (
 INSERT INTO `produk` (`id`, `nama`, `keterangan`, `foto`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Coconut                       Briquette Charcoal', 'Desiccated Coconut is a grated, dried (3% moisture content max.), and\r\n                      unsweetened fresh meat or kernel of a mature fruit of coconut. Desiccated\r\n                      Coconuts are graded by its cutting size, for example, fine grade and medium\r\n                      grade where fine grade is smaller particle size than the medium grade.', '3d8d948035734560f75c2f8124cc0e62.png', 0, 1, 1, NULL, '2022-03-11 17:28:12', '2022-04-02 21:07:17', NULL),
 (2, 'copra', 'Copra is the dried flesh of coconuts. Every adult coconut tree bears 50-75\r\n                      nuts that can be harvested, split with machetes and left to dry in the sun.\r\n                      The copra is then scraped out of the husk and gets to dry further on racks.\r\n                      Finally, it is packed in jute bags and transported to a processing facility.', '15a930f0a7dfb3b83c7e946c71d12eda.png', 0, 1, 1, NULL, '2022-03-11 17:28:36', '2022-04-02 21:07:21', NULL),
-(3, 'Cocopeat', 'Cocopeat adalah media tanam organik yang bebahan dasar dari sisa pengolahan cocofiber, diolah dari sisa serbuk yang di keluar kan oleh cocofiber pada saat penggilingan.', '2689c6482dbf572912c425062dea374c.jpg', 1, 1, 1, NULL, '2022-03-11 17:29:06', '2022-04-05 21:46:04', NULL),
-(4, 'Coconut Fiber', 'Coconut fiber adalah serat dari sabut kelapa yang sudah di proses giling berbentuk seperti rambut panjang dan umumnya berwarna kuning keemasan atau berwarna coklat. ', 'cf2d70fced7a80089949d838824f5450.jpg', 1, 1, 1, NULL, '2022-03-11 17:31:04', '2022-04-05 21:47:59', NULL),
+(3, 'Cocopeat', 'Cocopeat is an organic growing medium made from the rest of the processing of cocofiber, processed from the remaining powder released by the cocofiber at the time of milling.', '2689c6482dbf572912c425062dea374c.jpg', 1, 1, 1, NULL, '2022-03-11 17:29:06', '2022-04-08 14:23:58', NULL),
+(4, 'Coconut Fiber', 'Coconut fiber is fiber from coconut coir that has been milled in the shape of long hair and is generally golden yellow or brown in color.', 'cf2d70fced7a80089949d838824f5450.jpg', 1, 1, 1, NULL, '2022-03-11 17:31:04', '2022-04-08 14:23:21', NULL),
 (6, 'Copra Meal', 'Coconut meal or copra meal is produced from the ripe fruit (nut) of the\r\n                      coconut palm (Cocos nucifera). The nut is split and the kernel is removed\r\n                      and dried below 6% moisture. This meal is called copra meal and still\r\n                      contains the oil.', '20fe240fbfc73bdf4bcd7b822087165c.png', 0, 1, 1, NULL, '2022-03-11 17:31:37', '2022-04-02 21:07:13', NULL),
 (7, 'Coconut                       Peat Blocks', 'Cocopeat blocks are considered an ideal growing medium. The cocopeat powder\r\n                      thus obtained is sieved, washed, dried and finally compressed into blocks.\r\n                      The blocks can be used for a wide range of planting requirements. Coir is\r\n                      known for its natural rooting hormones and anti-fungal properties. We also\r\n                      ensure secure packaging of the cocopeat blocks.', '243d07c98e0131f35a1f4dd362bb59d3.png', 0, 1, 1, NULL, '2022-03-11 17:31:53', '2022-04-02 21:07:09', NULL),
 (8, 'Desinccated                       Coconut', 'Desiccated Coconut is a grated, dried (3% moisture content max.), and\r\n                      unsweetened fresh meat or kernel of a mature fruit of coconut. Desiccated\r\n                      Coconuts are graded by its cutting size, for example, fine grade and medium\r\n                      grade where fine grade is smaller particle size than the medium grade.', '', 0, 1, 1, NULL, '2022-03-11 17:32:06', '2022-04-02 21:05:54', NULL),
@@ -349,7 +355,8 @@ INSERT INTO `role_aplikasi` (`rola_id`, `rola_menu_id`, `rola_lev_id`, `created_
 (266, 133, 1, '2022-03-10 15:19:28'),
 (272, 131, 1, '2022-03-10 16:16:12'),
 (273, 140, 1, '2022-03-12 09:28:45'),
-(274, 141, 1, '2022-04-07 22:54:55');
+(274, 141, 1, '2022-04-07 22:54:55'),
+(275, 142, 1, '2022-04-08 07:22:39');
 
 -- --------------------------------------------------------
 
@@ -486,7 +493,7 @@ CREATE TABLE `whatsapp` (
 --
 
 INSERT INTO `whatsapp` (`id`, `name`, `description`, `number`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'gilang persada', '123', '81903902070', 1, 1, 1, NULL, '2021-11-18 00:58:52', '2021-11-24 22:06:38', NULL),
+(1, 'Bayu Aji', 'Admin WA', '81313585759', 1, 1, 1, NULL, '2021-11-18 00:58:52', '2022-04-08 15:36:31', NULL),
 (4, 'Nomor 2', 'Tes dua', '858578996321', 3, 1, 1, 1, '2021-11-18 01:05:30', '2021-11-24 22:05:59', '2021-11-24 22:05:59'),
 (5, 'no 3', '', '123', 3, 1, 1, 1, '2021-11-18 01:15:56', '2021-11-24 22:06:04', '2021-11-24 22:06:04'),
 (6, 'Isep Lutpi Nur', 'Tes', '85798132505', 0, 1, NULL, NULL, '2022-03-10 23:08:47', NULL, NULL);
@@ -637,13 +644,13 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 
 --
 -- AUTO_INCREMENT for table `pesan_masuk`
 --
 ALTER TABLE `pesan_masuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `produk`
@@ -655,7 +662,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `role_aplikasi`
 --
 ALTER TABLE `role_aplikasi`
-  MODIFY `rola_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=275;
+  MODIFY `rola_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=276;
 
 --
 -- AUTO_INCREMENT for table `role_users`

@@ -70,6 +70,7 @@ class Home extends Render_Controller
 		$this->data['kontak_show'] = $this->key_get($this->key_kontak_show);
 		if ($this->data['kontak_show']['value1'] == 1) {
 			$this->data['kontak_judul'] = $this->key_get($this->key_kontak_judul);
+			$this->data['kontak_sub_judul'] = $this->key_get($this->key_kontak_sub_judul);
 			$this->data['kontak_koordinat'] = $this->key_get($this->key_kontak_koordinat);
 		}
 
@@ -107,12 +108,10 @@ class Home extends Render_Controller
 	{
 		$this->load->library('form_validation');
 		$this->form_validation->set_error_delimiters('<li>', '</li>');
-		$this->form_validation->set_rules('nama', 'Nama', 'trim|required', ['required' => 'Nama harus di isi']);
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', [
-			'required' => 'Email harus di isi',
-			'valid_email' => 'Email tidak valid',
-		]);
-		$this->form_validation->set_rules('pesan', 'Pesan', 'trim|required', ['required' => 'Pesan harus di isi']);
+		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
+		$this->form_validation->set_rules('subject', 'Subject', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('message', 'Message', 'trim|required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->output_json([
 				'status' => false,
@@ -120,10 +119,12 @@ class Home extends Render_Controller
 				'message' => validation_errors()
 			], 400);
 		} else {
-			$nama = $this->input->post('nama');
+			$first_name = $this->input->post('first_name');
+			$last_name = $this->input->post('last_name');
 			$email = $this->input->post('email');
-			$pesan = $this->input->post('pesan');
-			$result = $this->model->insertPesan($nama, $email, $pesan);
+			$subject = $this->input->post('subject');
+			$message = $this->input->post('message');
+			$result = $this->model->insertPesan($first_name, $last_name, $subject, $email, $message);
 
 			$code = $result == null ? 404 : 200;
 			$status = $result != null;

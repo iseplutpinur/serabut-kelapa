@@ -46,13 +46,15 @@ $(document).ready(() => {
       "autoWidth": false,
       "columns": [
         { "data": null },
-        { "data": "nama" },
+        { "data": "first_name" },
+        { "data": "last_name" },
+        { "data": "subject" },
         {
           "data": "email", render(data, type, full, meta) {
             return `<a href="mailto:${data}">${data}</a>`
           }
         },
-        { "data": "pesan" },
+        { "data": "message" },
         {
           "data": "id", render(data, type, full, meta) {
             return `<div class="pull-right">

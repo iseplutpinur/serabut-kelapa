@@ -7,8 +7,8 @@ class Kontak extends Render_Controller
     {
         // data
         $this->data['judul'] = $this->key_get($this->key_kontak_judul);
+        $this->data['sub_judul'] = $this->key_get($this->key_kontak_sub_judul);
         $this->data['show'] = $this->key_get($this->key_kontak_show);
-        $this->data['koordinat'] = $this->key_get($this->key_kontak_koordinat);
 
         // Page Settings
         $this->title = 'Kontak';
@@ -38,14 +38,14 @@ class Kontak extends Render_Controller
         $judul = $this->key_set($this->key_kontak_judul, $main, $show);
 
         // judul
-        $latitiude = $this->input->post('latitiude');
-        $logtitude = $this->input->post('logtitude');
-        $koordinat = $this->key_set($this->key_kontak_koordinat, $latitiude, $logtitude);
+        $main = $this->input->post('main_sub_judul');
+        $show = $this->input->post('show_sub_judul') == null ? 0 : 1;
+        $sub_judul = $this->key_set($this->key_kontak_sub_judul, $main, $show);
 
         // perlihatkan konten
         $show_content = $this->key_set($this->key_kontak_show, $this->input->post('show_content') == null ? 0 : 1, null);
 
-        $result = $show_content &&  $judul && $koordinat;
+        $result = $show_content &&  $judul && $sub_judul;
         $this->output_json($result);
     }
 

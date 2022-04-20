@@ -3,12 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class HomeModel extends CI_Model
 {
-    public function insertPesan($nama, $email, $pesan, $user_id = null)
+    public function insertPesan($first_name, $last_name, $subject, $email, $message, $user_id = null)
     {
         $data = [
-            'nama' => $nama,
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'subject' => $subject,
             'email' => $email,
-            'pesan' => $pesan,
+            'message' => $message,
             'created_by' => $user_id,
         ];
 

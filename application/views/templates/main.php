@@ -333,7 +333,7 @@ function getBg(int $counter): string
                   <div class="owl-items text-center">
                     <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
                       <div class="card-body pl-0 pt-0">
-                        <img src="<?= base_url('files/image/testimoni/') . $item['foto'] ?>" alt="<?= $item['nama'] ?>" class="w45 float-left mr-3">
+                        <img src="<?= base_url('files/image/testimoni/') . $item['foto'] ?>" alt="<?= $item['nama'] ?>" class="w45 float-left mr-3" style="height: 150px; width: 150px; object-fit: cover; object-position: center; border-radius: 50%;" >
                         <h4 class="text-grey-700 fw-700 font-xsss mt-0 pt-1"><?= $item['nama'] ?></h4>
                         <h5 class="font-xssss fw-500 mb-1 text-grey-500"><?= $item['jabatan'] ?></h5>
                       </div>
@@ -381,7 +381,7 @@ function getBg(int $counter): string
                   <div class="owl-items text-center p-md-3">
                     <div class="d-flex flex-column justify-content-center text-center">
                       <div>
-                        <img src="<?= base_url('files/image/team/') . $item['foto'] ?>" class="rounded-circle mx-auto d-block" style="max-width: 150px;" alt="<?= $item['nama'] ?>">
+                        <img src="<?= base_url('files/image/team/') . $item['foto'] ?>" class="rounded-circle mx-auto d-block" style="height: 150px; width: 150px; object-fit: cover; object-position: center; border-radius: 50%;" alt="<?= $item['nama'] ?>">
                       </div>
                       <div>
                         <h3 class="fw-600 font-xs mt-3 mb-2 mt-2"><?= $item['nama'] ?></h3>

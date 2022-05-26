@@ -333,7 +333,7 @@ function getBg(int $counter): string
                   <div class="owl-items text-center">
                     <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
                       <div class="card-body pl-0 pt-0">
-                        <img src="<?= base_url('files/image/testimoni/') . $item['foto'] ?>" alt="<?= $item['nama'] ?>" class="w45 float-left mr-3" style="height: 150px; width: 150px; object-fit: cover; object-position: center; border-radius: 50%;" >
+                        <img src="<?= base_url('files/image/testimoni/') . $item['foto'] ?>" alt="<?= $item['nama'] ?>" class="w45 float-left mr-3" style="height: 150px; width: 150px; object-fit: cover; object-position: center; border-radius: 50%;">
                         <h4 class="text-grey-700 fw-700 font-xsss mt-0 pt-1"><?= $item['nama'] ?></h4>
                         <h5 class="font-xssss fw-500 mb-1 text-grey-500"><?= $item['jabatan'] ?></h5>
                       </div>
@@ -497,10 +497,10 @@ function getBg(int $counter): string
                 </a>
               </div>
             <?php endif ?>
-            <div>
+            <!-- <div>
               <p class="animate w-100"><?= $footer_alamat['value1'] ?>
               </p>
-            </div>
+            </div> -->
             <div>
               <ul class="list-inline">
                 <?php foreach ($footer_sosmed as $sosmed) : ?>
@@ -508,6 +508,42 @@ function getBg(int $counter): string
                 <?php endforeach; ?>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <br>
+          <span class="font-weight-bold text-dark">Contact</span>
+          <div class="row">
+            <div class="col-lg-8">
+
+              <div class="d-flex flex-row align-items-center my-2 ">
+                <div class="mr-3">
+                  <i class="fas fa-phone-alt fa-2x"></i>
+                </div>
+                <div>
+                  <a href="tel:+6281313585759">+6281313585759</a>
+                </div>
+              </div>
+
+
+              <div class="d-flex flex-row align-items-center my-3 ">
+                <div class="mr-3">
+                  <i class="fas fa-envelope-open fa-2x"></i>
+                </div>
+                <div>
+                  <a href="mailto:officialoffice@coconutinfinity.com">officialoffice@coconutinfinity.com</a>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-center my-3">
+                <div class="mr-3">
+                  <i class="fas fa-map-marker-alt fa-2x"></i>
+                </div>
+                <p>Jln. Cibangkong Lor Komplek PJKA No. 45 RT 5 RW 11
+                  Kelurahan Cibangkong, Kecamatan Batununggal, Bandung Jawa Barat 40273</p>
+              </div>
+
+
             </div>
           </div>
           <div class="row">
